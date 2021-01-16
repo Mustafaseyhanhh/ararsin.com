@@ -1,4 +1,4 @@
-var Subs = require('../../models/subs');
+var {Subs} = require('../../models/subs');
 
 /* GET users listing. */
 function Sfirma (req, res, next) {

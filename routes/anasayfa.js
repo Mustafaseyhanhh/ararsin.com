@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Subs = require('../models/subs')
+var {Subs} = require('../models/subs')
 
 
 /* GET home page. */

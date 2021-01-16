@@ -164,18 +164,17 @@
                                                 alt=""></a>
                                     </div>
                                     <div class="footer-contacts-widget fl-wrap">
-                                        <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis
-                                            cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
+                                        <p>Firmaları ve müşterileri bir araya getiren en büyük platform. Ararsın com ile hemen iletişime geçip yeni müşteriler kazanabilirsiniz. </p>
                                         <ul class="footer-contacts fl-wrap no-list-style">
-                                            <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="#"
-                                                    target="_blank">yourmail@domain.com</a></li>
-                                            <li> <span><i class="fal fa-map-marker"></i> Adress :</span><a href="#"
-                                                    target="_blank">USA 27TH Brooklyn NY</a></li>
+                                            <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="mailto:bilgi@ararsin.com"
+                                                    target="_blank">bilgi@ararsin.com</a></li>
+                                            <li> <span><i class="fal fa-map-marker"></i> Adres :</span><a href="#"
+                                                    target="_blank">Muratreis mah. Selamet sok. Üsküdar/İSTANBUL</a></li>
                                             <li><span><i class="fal fa-phone"></i> Phone :</span><a
-                                                    href="#">+7(111)123456789</a></li>
+                                                    href="tel:05357350700">0 ( 535 ) 735 07 00</a></li>
                                         </ul>
                                         <div class="footer-social">
-                                            <span>Find us on: </span>
+                                            <span>Bizi takip edin: </span>
                                             <ul class="no-list-style">
                                                 <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -191,38 +190,22 @@
                             <!-- footer-widget-->
                             <div class="col-md-4">
                                 <div class="footer-widget fl-wrap">
-                                    <h3>Our Last News</h3>
+                                    <h3>Blog</h3>
                                     <div class="footer-widget-posts fl-wrap">
                                         <ul class="no-list-style">
+                                            {{#each (footer_blog)}}
                                             <li class="clearfix">
                                                 <a href="#" class="widget-posts-img"><img src="/tema/images/all/1.jpg"
                                                         class="respimg" alt=""></a>
                                                 <div class="widget-posts-descr">
-                                                    <a href="#" title="">Vivamus dapibus rutrum</a>
+                                                    <a href="#" title="">{{adi}}</a>                                                    
                                                     <span class="widget-posts-date"><i class="fal fa-calendar"></i> 21 Mar
                                                         09.05 </span>
                                                 </div>
                                             </li>
-                                            <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="/tema/images/all/1.jpg"
-                                                        class="respimg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title=""> In hac habitasse platea</a>
-                                                    <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar
-                                                        18.21 </span>
-                                                </div>
-                                            </li>
-                                            <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="/tema/images/all/1.jpg"
-                                                        class="respimg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title="">Tortor tempor in porta</a>
-                                                    <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar
-                                                        16.42 </span>
-                                                </div>
-                                            </li>
+                                            {{/each}}
                                         </ul>
-                                        <a href="blog.html" class="footer-link">Read all <i
+                                        <a href="/blog" class="footer-link">Tümü <i
                                                 class="fal fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -230,14 +213,15 @@
                             <!-- footer-widget end-->
                             <!-- footer-widget  -->
                             <div class="col-md-4">
-                                <div class="footer-widget fl-wrap ">
-                                    <h3>Our Twitter</h3>
-                                    <div class="twitter-holder fl-wrap scrollbar-inner2" data-simplebar
-                                        data-simplebar-auto-hide="false">
-                                        <div id="footer-twiit"></div>
+                                <div class="footer-widget fl-wrap">
+                                    <h3>Etiketler</h3>
+                                    <div class="box-widget-content">
+                                    <div class="list-single-tags tags-stylwrap">
+                                        {{#each (footer_etiket)}}
+                                        <a href="{{link}}">{{etiket}}</a>
+                                        {{/each}}
                                     </div>
-                                    <a href="#" class="footer-link twitter-link" target="_blank">Follow us <i
-                                            class="fal fa-long-arrow-right"></i></a>
+                                </div>
                                 </div>
                             </div>
                             <!-- footer-widget end-->
@@ -267,6 +251,7 @@
                         </div>
                         <div class="subfooter-nav">
                             <ul class="no-list-style">
+                                <li><a href="/yasal-bildiriler">Bildiriler</a></li>
                                 <li><a href="/kvkk">KVKK</a></li>
                                 <li><a href="/hizmet-sozlesmesi">Hizmet Sözleşmesi</a></li>
                                 <li><a href="/gizlilik-sozlesmesi">Gizlilik Sözleşmesi</a></li>

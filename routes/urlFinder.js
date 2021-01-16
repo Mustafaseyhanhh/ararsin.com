@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var {Il,Ilce} = require('../models/konum')
-var Subs = require('../models/subs')
+var {Subs} = require('../models/subs')
 var Kategori = require('../models/kategori')
 
 //dirFinder fonksiyonları

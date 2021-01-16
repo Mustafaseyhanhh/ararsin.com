@@ -22,4 +22,8 @@ router.get('/yasal-uyarilar', function(req, res, next) {
     res.render('themplate/sozlesmeler/yasal', { title: 'Express'})
 });
 
+router.get('/yasal-bildiriler', function(req, res, next) {
+    res.render('themplate/sozlesmeler/bildiri', { title: 'Express'})
+});
+
 module.exports = router;

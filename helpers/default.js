@@ -1,6 +1,4 @@
 var DateFormat  = require("dateformat")
-var mongoose = require("mongoose")
-var Blog= require("../models/blog")
 
 module.exports ={
     logo : (req) => {
@@ -32,9 +30,16 @@ module.exports ={
         return (val1 == val2) ? true : false;
     },
 
-    footer_blog : (limit) => {
-        let blog = Blog.find({}, null, {limit: 3})
-        console.log("***************************",blog.length)
-        return blog
+    footer_blog : () => {
+        
+        return require("./data/footer_blog").footer_blog
+    },
+
+    footer_etiket : () => {
+        return require("./data/footer_etiket").footer_etiket
+    },
+
+    home_referans : () => {
+        return require("./data/home_referans").home_referans
     }
 }

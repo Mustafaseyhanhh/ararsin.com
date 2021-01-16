@@ -1,4 +1,4 @@
-var Subs = require('../../models/subs');
+var {Subs} = require('../../models/subs');
 var Sayfalama =  require('../../helpers/sayfalama')
 var Kategori = require("../../models/kategori");
 

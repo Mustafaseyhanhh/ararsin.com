@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var {Il,Ilce,SearchBox} = require('../models/konum')
-var Subs = require('../models/subs');
+var {Subs} = require('../models/subs');
 var Sayfalama =  require('../helpers/sayfalama')
 
 

@@ -1,8 +1,6 @@
 const mongoose=require('mongoose')
 var Kategori=require('./kategori')
-var Il=require('./konum').Il
-var Ilce=require('./konum').Ilce
-var Mahalle=require('./konum').Mahalle
+var {Il,Ilce,Mahalle}=require('./konum')
 
 
 const SubsSchema = new mongoose.Schema({
@@ -12,27 +10,37 @@ const SubsSchema = new mongoose.Schema({
     priority : {type: Number, default:1},
     kategori : {type:mongoose.Schema.Types.ObjectId,ref:'Kategori',required:true},
     premium : {type: Boolean, default: false},
-    pro : {type: Boolean, default: false},
+    premium_paket : {type:Number,default:0},
     hakkinda_kisa : {type:String},
-    hakkinda_uzun : {type:String},
     adres : {type:String},
     il : {type:mongoose.Schema.Types.ObjectId,ref:'Il'},
     ilce : {type:mongoose.Schema.Types.ObjectId,ref:'Ilce'},
     mahalle : {type:mongoose.Schema.Types.ObjectId,ref:'Mahalle'},
-    numara : [],
-    website : [],
-    email : [],
-    sosyal_medya : [{logo:{type:String},text:{link:String}}],
-    hizmetler : [{logo:{type:String},text:{type:String}}],
-    map_xy : [],
-    resimler : [],
     profil_image : {type:String},
     banner_image : {type:String},
-    saat : [{min : {type:String}, max : {type:String}}],
-    hizmet_bolgesi : {type:String,default:'Hizmet Bölgesi Belirtilmemiştir.'},
-    etiketler : [],
-    ziyaretci_sayisi : {type: Number, default:0},
+    degerlendirme : {type: Number, default:0},
+    yildiz : {type: Number, default:5},
     lastmod : {type:Date,default:Date.now}
 })
 
-module.exports=mongoose.model('Subs',SubsSchema)
+const SubsDataSchema = new mongoose.Schema({
+    subs_id : {type:mongoose.Schema.Types.ObjectId,ref:'SubsSchema',required:true},
+    resimler : [],
+    saat : [{min : {type:String}, max : {type:String}}],
+    etiketler : [],
+    ziyaretci_sayisi : {type: Number, default:0},
+    hizmet_bolgesi : {type:String,default:'Hizmet Bölgesi Belirtilmemiştir.'},
+    map_xy : [],
+    sosyal_medya : [{logo:{type:String},text:{link:String}}],
+    hizmetler : [{logo:{type:String},text:{type:String}}],
+    numara : [],
+    website : [],
+    email : [],
+    hakkinda_uzun : {type:String},
+})
+
+
+module.exports = {
+    'Subs': mongoose.model('Subs', SubsSchema),
+    'SubsData': mongoose.model('SubsData', SubsDataSchema)
+}
