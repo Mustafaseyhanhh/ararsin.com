@@ -1,0 +1,673 @@
+<!-- wrapper-->
+<div id="wrapper">
+    <!-- content-->
+    <div class="content">
+        <!--section  -->
+        <section class="hero-section" data-scrollax-parent="true">
+            <div class="bg-tabs-wrap">
+                <div class="bg-parallax-wrap" data-scrollax="properties: { translateY: '200px' }">
+                    <div class="bg bg_tabs" data-bg="images/slider/ararsin_hersey_ara.jpg"></div>
+                    <div class="overlay op7"></div>
+                </div>
+            </div>
+            <div class="container small-container">
+                <div class="intro-item fl-wrap">
+                    <span class="section-separator"></span>
+                    <div class="bubbles">
+                        <h1>Şehrindeki En iyi Yerleri Keşfet</h1>
+                    </div>
+                    <h3>Bulunduğun yeri keşfetmenin tam zamanı. Hem gezmek hem de en iyi hizmeti almak için.</h3>
+                </div>
+                <!-- main-search-input-tabs-->
+                <div class="main-search-input-tabs  tabs-act fl-wrap">
+                    <ul class="tabs-menu change_bg no-list-style">
+                        <li class="current"><a href="#tab-inpt1" data-bgtab="images/slider/ararsin_hersey_ara.jpg"> Her Şey</a></li>
+                        <li><a href="#tab-inpt1" data-bgtab="images/slider/ararsin_otel_ara.jpg"> Otel</a></li>
+                        <li><a href="#tab-inpt1" data-bgtab="images/slider/ararsin_restoran_ara.jpg"> Restoran</a></li>
+                        <li><a href="#tab-inpt1" data-bgtab="images/slider/ararsin_eglence_ara.jpg"> Eğlence</a></li>
+                    </ul>
+                    <!--tabs -->
+                    <div class="tabs-container fl-wrap  ">
+                        <!--tab -->
+                        <div class="tab">
+                            <div id="tab-inpt1" class="tab-content first-tab">
+                                <div class="main-search-input-wrap fl-wrap">
+                                    <div class="main-search-input fl-wrap">
+                                        <form method="GET" action="/arama">
+                                        <div class="main-search-input-item main-search-input-item-50 ">
+                                            <label><i class="fal fa-handshake-alt"></i></label>
+                                            <input type="text" name="kutu1" placeholder="Firma Adı, Kategori" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Aramak istediğiniz ismi yada kategoriyi giriniz.')"/>
+                                        </div>
+                                        <div class="main-search-input-item main-search-input-item-50" id='locHome' aria-required="true">
+                                            <select  class="chosen-select on-radius" name="kutu2" id="Homekutu2">
+                                                <option value="Tüm Türkiye">Tüm Türkiye</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="main-search-button color2-bg">Hemen Bul <i class="far fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tab end-->
+                        <!--tab -->
+                        <div class="tab">
+                            <div id="tab-inpt2" class="tab-content">
+                                <div class="main-search-input-wrap fl-wrap">
+                                    <div class="main-search-input fl-wrap">
+                                        <div class="main-search-input-item">
+                                            <label><i class="fal fa-handshake-alt"></i></label>
+                                            <input type="text" placeholder="Event Name or Place" value="" />
+                                        </div>
+                                        <div class="main-search-input-item">
+                                            <select data-placeholder="Loaction"
+                                                class="chosen-select on-radius">
+                                                <option>All Cities</option>
+                                                <option>New York</option>
+                                                <option>London</option>
+                                                <option>Paris</option>
+                                                <option>Kiev</option>
+                                                <option>Moscow</option>
+                                                <option>Dubai</option>
+                                                <option>Rome</option>
+                                                <option>Beijing</option>
+                                            </select>
+                                        </div>
+                                        <div class="main-search-input-item clact date-container">
+                                            <span class="iconn-dec"><i class="fal fa-calendar"></i></span>
+                                            <input type="text" placeholder="Event Date"
+                                                name="datepicker-here" value="" />
+                                            <span class="clear-singleinput"><i
+                                                    class="fal fa-times"></i></span>
+                                        </div>
+                                        <button class="main-search-button color2-bg"
+                                            onclick="window.location.href='listing.html'">Search <i
+                                                class="far fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tab end-->
+                        <!--tab -->
+                        <div class="tab">
+                            <div id="tab-inpt3" class="tab-content">
+                                <div class="main-search-input-wrap fl-wrap">
+                                    <div class="main-search-input fl-wrap">
+                                        <div class="main-search-input-item">
+                                            <label><i class="fal fa-cheeseburger"></i></label>
+                                            <input type="text" placeholder="Restaurant Name" value="" />
+                                        </div>
+                                        <div class="main-search-input-item clact date-container">
+                                            <span class="iconn-dec"><i class="fal fa-calendar"></i></span>
+                                            <input type="text" placeholder="Date and Time"
+                                                name="datepicker-here-time" value="" />
+                                            <span class="clear-singleinput"><i
+                                                    class="fal fa-times"></i></span>
+                                        </div>
+                                        <div class="main-search-input-item">
+                                            <label><i class="fal fa-user-friends"></i></label>
+                                            <input type="number" placeholder="Persons" value="" />
+                                        </div>
+                                        <button class="main-search-button color2-bg"
+                                            onclick="window.location.href='listing.html'">Search <i
+                                                class="far fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tab end-->
+                        <!--tab -->
+                        <div class="tab">
+                            <div id="tab-inpt4" class="tab-content">
+                                <div class="main-search-input-wrap fl-wrap">
+                                    <div class="main-search-input fl-wrap">
+                                        <div class="main-search-input-item">
+                                            <label><i class="fal fa-cheeseburger"></i></label>
+                                            <input type="text" placeholder="Hotel Name" value="" />
+                                        </div>
+                                        <div class="main-search-input-item">
+                                            <label><i class="fal fa-user-friends"></i></label>
+                                            <input type="number" placeholder="Persons" value="" />
+                                        </div>
+                                        <div
+                                            class="main-search-input-item clact date-container3 daterangepicker_big">
+                                            <span class="iconn-dec"><i class="fal fa-calendar"></i></span>
+                                            <input type="text" placeholder="Date In Out" name="dates"
+                                                value="" />
+                                            <span class="clear-singleinput"><i
+                                                    class="fal fa-times"></i></span>
+                                        </div>
+                                        <button class="main-search-button color2-bg"
+                                            onclick="window.location.href='listing.html'">Search <i
+                                                class="far fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tab end-->
+                    </div>
+                    <!--tabs end-->
+                </div>
+                <!-- main-search-input-tabs end-->
+                <div class="hero-categories fl-wrap">
+                    <h4 class="hero-categories_title">Etrafına bakınmak istiyorsan hızlıaramaları kullanabilirsin :
+                    </h4>
+                    <ul class="no-list-style">
+                        <li><a href="/restoranlar"><i class="far fa-cheeseburger"></i><span>Restoran</span></a></li>
+                        <li><a href="/otel-rezervasyon"><i class="far fa-bed"></i><span>Otel</span></a></li>
+                        <li><a href="/avm-alisveris-merkezleri"><i class="far fa-shopping-bag"></i><span>Alışveriş Merkezi</span></a>
+                        </li>
+                        <li><a href="/fitness-ve-spor-salonlari"><i class="far fa-dumbbell"></i><span>Fitness</span></a>
+                        </li>
+                        <li><a href="/kategoriler"><i class="far fa-cocktail"></i><span>Diğer</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <a href="#sec1" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>
+            </div>
+        </section>
+        <!--section end-->
+        <!--section  -->
+        <section class="slw-sec" id="sec1">
+            <div class="section-title">
+                <h2>Premium Köşemiz</h2>
+                <div class="section-subtitle">Yeni Listelenenler</div>
+                <span class="section-separator"></span>
+                <p>Ücretsiz olarak istediğin kategoriye ekleme yapabilirsin. Tek yapman gereken üye olmak ve listelenmek</p>
+            </div>
+            <div class="listing-slider-wrap fl-wrap">
+                <div class="listing-slider fl-wrap">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!--  swiper-slide  -->
+                            {{#each subs}}
+                            <div class="swiper-slide">
+                                <div class="listing-slider-item fl-wrap">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item listing_carditem">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <div class="geodir-js-favorite_btn"><i
+                                                        class="fal fa-heart"></i><span>Save</span></div>
+                                                <a href="listing-single.html"
+                                                    class="geodir-category-img-wrap fl-wrap">
+                                                    <img src="/banner/{{slug}}.jpg" alt="">
+                                                </a>
+                                                <div class="geodir_status_date gsd_open"><i
+                                                        class="fal fa-lock-open"></i>Open Now</div>
+                                                <div class="geodir-category-opt">
+                                                    <div class="geodir-category-opt_title">
+                                                        <h4><a href="listing-single.html">{{#if kisa_baslik}}{{kisa_baslik}}{{else}}{{karakter baslik 20}}...{{/if}}</a></h4>
+                                                        <div class="geodir-category-location"><a href="#"><i
+                                                                    class="fas fa-map-marker-alt"></i> 34-42
+                                                                Montgomery St , NY, USA</a></div>
+                                                    </div>
+                                                    <div class="listing-rating-count-wrap">
+                                                        <div class="review-score">4.1</div>
+                                                        <div class="listing-rating card-popup-rainingvis"
+                                                            data-starrating2="4"></div>
+                                                        <br>
+                                                        <div class="reviews-count">26 reviews</div>
+                                                    </div>
+                                                    <div class="listing_carditem_footer fl-wrap">
+                                                        <a class="listing-item-category-wrap" href="#">
+                                                            <div class="listing-item-category red-bg"><i
+                                                                    class="fal fa-cheeseburger"></i></div>
+                                                            <span>Restaurants</span>
+                                                        </a>
+                                                        <div class="price-level geodir-category_price">
+                                                            <span class="price-level-item"
+                                                                data-pricerating="2"></span>
+                                                            <span class="price-name-tooltip">Pricey</span>
+                                                        </div>
+                                                        <div class="post-author"><a href="#"><img
+                                                                    src="/profil/fav{{logo}}.png"
+                                                                    alt=""><span>By , Alisa Noory</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                            </div>
+                            {{/each}}
+                            <!--  swiper-slide end  -->
+                        </div>
+                    </div>
+                    <div class="listing-carousel-button listing-carousel-button-next2"><i
+                            class="fas fa-caret-right"></i></div>
+                    <div class="listing-carousel-button listing-carousel-button-prev2"><i
+                            class="fas fa-caret-left"></i></div>
+                </div>
+                <div class="tc-pagination_wrap">
+                    <div class="tc-pagination2"></div>
+                </div>
+            </div>
+        </section>
+        <!--section end-->
+        <div class="sec-circle fl-wrap"></div>
+        <!--section -->
+        <section class="gray-bg hidden-section particles-wrapper">
+            <div class="container">
+                <div class="section-title">
+                    <h2>En Hareketli Şehirler</h2>
+                    <div class="section-subtitle">Şehir Şehir Listele</div>
+                    <span class="section-separator"></span>
+                    <p>Kendi Şehrinde olan bitenden haberdar olmabilirsin. Heryer seni beliyor.
+                    </p>
+                </div>
+                <div class="listing-item-grid_container fl-wrap">
+                    <div class="row">
+                        <!--  listing-item-grid  -->
+                        <div class="col-sm-4">
+                            <div class="listing-item-grid">
+                                <div class="bg" data-bg="/images/diger/izmir_ararsin_tum_firmalar.jpg"></div>
+                                <div class="d-gr-sec"></div>
+                                <div class="listing-counter color2-bg"><span>16 </span> Locations</div>
+                                <div class="listing-item-grid_title">
+                                    <h3><a href="izmir">İzmir</a></h3>
+                                    <p>Kordondan körfeze karşı çayınızı yudumlata;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  listing-item-grid end  -->
+                        <!--  listing-item-grid  -->
+                        <div class="col-sm-4">
+                            <div class="listing-item-grid">
+                                <div class="bg" data-bg="/images/diger/antalya_ararsin_tum_firmalar.jpg"></div>
+                                <div class="d-gr-sec"></div>
+                                <div class="listing-counter color2-bg"><span>22 </span> Locations</div>
+                                <div class="listing-item-grid_title">
+                                    <h3><a href="antalya">Antalya</a></h3>
+                                    <p>Turizmin başkenti olan denizin ve sahillerin havasıyla içinizi mest eden;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  listing-item-grid end  -->
+                        <!--  listing-item-grid  -->
+                        <div class="col-sm-4">
+                            <div class="listing-item-grid">
+                                <div class="bg" data-bg="/images/diger/mardin_ararsin_tum_firmalar.jpg"></div>
+                                <div class="d-gr-sec"></div>
+                                <div class="listing-counter color2-bg"><span>9 </span> Locations</div>
+                                <div class="listing-item-grid_title">
+                                    <h3><a href="mardin">Mardin</a></h3>
+                                    <p>Tarihin tozlu sayfalarından ortaya çıkmış antik eserleri;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  listing-item-grid end  -->
+                        <!--  listing-item-grid  -->
+                        <div class="col-sm-4">
+                            <div class="listing-item-grid">
+                                <div class="bg" data-bg="/images/diger/konya_ararsin_tum_firmalar.jpg"></div>
+                                <div class="d-gr-sec"></div>
+                                <div class="listing-counter color2-bg"><span>12 </span> Locations</div>
+                                <div class="listing-item-grid_title">
+                                    <h3><a href="/konya">Konya</a></h3>
+                                    <p>Kültürün başkenti. Ne olursan ol yine gel;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  listing-item-grid end  -->
+                        <!--  listing-item-grid  -->
+                        <div class="col-sm-8">
+                            <div class="listing-item-grid">
+                                <div class="bg" data-bg="/images/diger/istanbul_ararsin_tum_firmalar.jpg"></div>
+                                <div class="d-gr-sec"></div>
+                                <div class="listing-counter color2-bg"><span>33 </span> Locations</div>
+                                <div class="listing-item-grid_title">
+                                    <h3><a href="/istanbul">İstanbul</a></h3>
+                                    <p>Vapur yolculuklarınızda size eşlik ederek gününüzü gün eden martılar;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  listing-item-grid end  -->
+                    </div>
+                </div>
+                <a href="/sehirler" class="btn dec_btn   color2-bg">Tüm Şehirler<i
+                        class="fal fa-arrow-alt-right"></i></a>
+            </div>
+        </section>
+        <!--  section  -->
+        <!--section end-->
+        <section class="parallax-section small-par" data-scrollax-parent="true">
+            <div class="bg par-elem " data-bg="images/diger/araniyor_istatistik_arama.jpg"
+                data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="overlay  op7"></div>
+            <div class="container">
+                <div class=" single-facts single-facts_2 fl-wrap">
+                    <!-- inline-facts -->
+                    <div class="inline-facts-wrap">
+                        <div class="inline-facts">
+                            <div class="milestone-counter">
+                                <div class="stats animaper">
+                                    <div class="num" data-content="0" data-num="1254">1254</div>
+                                </div>
+                            </div>
+                            <h6>Haftalık Ziyafetçi</h6>
+                        </div>
+                    </div>
+                    <!-- inline-facts end -->
+                    <!-- inline-facts  -->
+                    <div class="inline-facts-wrap">
+                        <div class="inline-facts">
+                            <div class="milestone-counter">
+                                <div class="stats animaper">
+                                    <div class="num" data-content="0" data-num="12168">12168</div>
+                                </div>
+                            </div>
+                            <h6>Toplam Kategori</h6>
+                        </div>
+                    </div>
+                    <!-- inline-facts end -->
+                    <!-- inline-facts  -->
+                    <div class="inline-facts-wrap">
+                        <div class="inline-facts">
+                            <div class="milestone-counter">
+                                <div class="stats animaper">
+                                    <div class="num" data-content="0" data-num="2172">2172</div>
+                                </div>
+                            </div>
+                            <h6>Tüm Firmalar</h6>
+                        </div>
+                    </div>
+                    <!-- inline-facts end -->
+                    <!-- inline-facts  -->
+                    <div class="inline-facts-wrap">
+                        <div class="inline-facts">
+                            <div class="milestone-counter">
+                                <div class="stats animaper">
+                                    <div class="num" data-content="0" data-num="732">732</div>
+                                </div>
+                            </div>
+                            <h6>Onaylı Profil</h6>
+                        </div>
+                    </div>
+                    <!-- inline-facts end -->
+                </div>
+            </div>
+        </section>
+        <!--section end-->
+        <!--section  -->
+        <section data-scrollax-parent="true">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Ararsın nasıl çalışır</h2>
+                    <div class="section-subtitle">İletişime &amp; Geçin </div>
+                    <span class="section-separator"></span>
+                    <p>Kendiniz ve işletmeniz için yeni müşteriler daha çok trafik ve ziyaret.</p>
+                </div>
+                <div class="process-wrap fl-wrap">
+                    <ul class="no-list-style">
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">01 </span>
+                                <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                <h4> İşletmenizi Bulun, Ekleyin</h4>
+                                <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus,
+                                    finibus tellus ut, convallis eros sollicitudin turpis.</p>
+                            </div>
+                            <span class="pr-dec"></span>
+                        </li>
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">02</span>
+                                <div class="time-line-icon"><i class="fal fa-mail-bulk"></i></div>
+                                <h4> Bizimle İletişime Geçin</h4>
+                                <p>Faucibus ante, in porttitor tellus blandit et. Phasellus tincidunt metus
+                                    lectus sollicitudin feugiat pharetra consectetur.</p>
+                            </div>
+                            <span class="pr-dec"></span>
+                        </li>
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">03</span>
+                                <div class="time-line-icon"><i class="fal fa-layer-plus"></i></div>
+                                <h4> Hızla ve Güvenle Listelenin</h4>
+                                <p>Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit
+                                    nulla, id vestibulum metus nullam viverra porta.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="process-end"><i class="fal fa-check"></i></div>
+                </div>
+            </div>
+        </section>
+        <!--section end-->
+        <!--section  -->
+        <section class="gradient-bg hidden-section" data-scrollax-parent="true">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="colomn-text  pad-top-column-text fl-wrap">
+                            <div class="colomn-text-title">
+                                <h3>Our App Available Now</h3>
+                                <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa
+                                    convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida.
+                                    Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit.</p>
+                                <a href="#" class=" down-btn color3-bg"><i class="fab fa-apple"></i> Apple
+                                    Store </a>
+                                <a href="#" class=" down-btn color3-bg"><i class="fab fa-android"></i>
+                                    Google Play </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="collage-image">
+                            <img src="/tema/images/api.png" class="main-collage-image" alt="">
+                            <div class="images-collage-title color2-bg icdec"> <img src="/tema/images/logo/{{logo}}.png"
+                                    alt=""></div>
+                            <div class="images-collage_icon green-bg" style="right:-20px; top:120px;"><i
+                                    class="fal fa-thumbs-up"></i></div>
+                            <div class="collage-image-min cim_1"><img src="/tema/images/1.jpg" alt=""></div>
+                            <div class="collage-image-min cim_2"><img src="/tema/images/2.jpg" alt=""></div>
+                            <div class="collage-image-btn green-bg">Booking now</div>
+                            <div class="collage-image-input">Search <i class="fa fa-search"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gradient-bg-figure" style="right:-30px;top:10px;"></div>
+            <div class="gradient-bg-figure" style="left:-20px;bottom:30px;"></div>
+            <div class="circle-wrap" style="left:270px;top:120px;"
+                data-scrollax="properties: { translateY: '-200px' }">
+                <div class="circle_bg-bal circle_bg-bal_small"></div>
+            </div>
+            <div class="circle-wrap" style="right:420px;bottom:-70px;"
+                data-scrollax="properties: { translateY: '150px' }">
+                <div class="circle_bg-bal circle_bg-bal_big"></div>
+            </div>
+            <div class="circle-wrap" style="left:420px;top:-70px;"
+                data-scrollax="properties: { translateY: '100px' }">
+                <div class="circle_bg-bal circle_bg-bal_big"></div>
+            </div>
+            <div class="circle-wrap" style="left:40%;bottom:-70px;">
+                <div class="circle_bg-bal circle_bg-bal_middle"></div>
+            </div>
+            <div class="circle-wrap" style="right:40%;top:-10px;">
+                <div class="circle_bg-bal circle_bg-bal_versmall"
+                    data-scrollax="properties: { translateY: '-350px' }"></div>
+            </div>
+            <div class="circle-wrap" style="right:55%;top:90px;">
+                <div class="circle_bg-bal circle_bg-bal_versmall"
+                    data-scrollax="properties: { translateY: '-350px' }"></div>
+            </div>
+        </section>
+        <!--section end-->
+        <!--section  -->
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2> Sizden Görüşler</h2>
+                    <div class="section-subtitle">Mutlu Üyelerimiz</div>
+                    <span class="section-separator"></span>
+                    <p>Bİnlerce mutlu üyemizden sadece birkaçının görüşü.</p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="testimonilas-carousel-wrap fl-wrap">
+                <div class="listing-carousel-button listing-carousel-button-next"><i
+                        class="fas fa-caret-right"></i></div>
+                <div class="listing-carousel-button listing-carousel-button-prev"><i
+                        class="fas fa-caret-left"></i></div>
+                <div class="testimonilas-carousel">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!--testi-item-->
+                            <div class="swiper-slide">
+                                <div class="testi-item fl-wrap">
+                                    <div class="testi-avatar"><img src="/images/avatar/1.jpg" alt=""></div>
+                                    <div class="testimonilas-text fl-wrap">
+                                        <div class="listing-rating card-popup-rainingvis"
+                                            data-starrating2="5"></div>
+                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices
+                                            ac nunc. Mauris non ligula suscipit, vulputate mi accumsan,
+                                            dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem
+                                            non porta. "</p>
+                                        <a href="#" class="testi-link" target="_blank">Via Facebook</a>
+                                        <div class="testimonilas-avatar fl-wrap">
+                                            <h3>Andy Dimasky</h3>
+                                            <h4>Restaurant Owner</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--testi-item end-->
+                            <!--testi-item-->
+                            <div class="swiper-slide">
+                                <div class="testi-item fl-wrap">
+                                    <div class="testi-avatar"><img src="/images/avatar/1.jpg" alt=""></div>
+                                    <div class="testimonilas-text fl-wrap">
+                                        <div class="listing-rating card-popup-rainingvis"
+                                            data-starrating2="5"></div>
+                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices
+                                            ac nunc. Mauris non ligula suscipit, vulputate mi accumsan,
+                                            dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem
+                                            non porta. "</p>
+                                        <a href="#" class="testi-link" target="_blank">Via Twitter</a>
+                                        <div class="testimonilas-avatar fl-wrap">
+                                            <h3>Frank Dellov</h3>
+                                            <h4>Hotel Owner</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--testi-item end-->
+                            <!--testi-item-->
+                            <div class="swiper-slide">
+                                <div class="testi-item fl-wrap">
+                                    <div class="testi-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                                    <div class="testimonilas-text fl-wrap">
+                                        <div class="listing-rating card-popup-rainingvis"
+                                            data-starrating2="5"></div>
+                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices
+                                            ac nunc. Mauris non ligula suscipit, vulputate mi accumsan,
+                                            dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem
+                                            non porta. "</p>
+                                        <a href="#" class="testi-link" target="_blank">Via Facebook</a>
+                                        <div class="testimonilas-avatar fl-wrap">
+                                            <h3>Centa Simpson</h3>
+                                            <h4>Restaurant Owner</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--testi-item end-->
+                            <!--testi-item-->
+                            <div class="swiper-slide">
+                                <div class="testi-item fl-wrap">
+                                    <div class="testi-avatar"><img src="/images/avatar/1.jpg" alt=""></div>
+                                    <div class="testimonilas-text fl-wrap">
+                                        <div class="listing-rating card-popup-rainingvis"
+                                            data-starrating2="5"></div>
+                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices
+                                            ac nunc. Mauris non ligula suscipit, vulputate mi accumsan,
+                                            dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem
+                                            non porta. "</p>
+                                        <a href="#" class="testi-link" target="_blank">Via Instagram</a>
+                                        <div class="testimonilas-avatar fl-wrap">
+                                            <h3>Linda Svensky</h3>
+                                            <h4>Shop Owner</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--testi-item end-->
+                        </div>
+                    </div>
+                </div>
+                <div class="tc-pagination"></div>
+            </div>
+            <div class="waveWrapper waveAnimation">
+                <div class="waveWrapperInner bgMiddle">
+                    <div class="wave-bg-anim waveMiddle"
+                        style="background-image: url('images/wave-top.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                    <div class="wave-bg-anim waveBottom"
+                        style="background-image: url('images/wave-top.png')"></div>
+                </div>
+            </div>
+        </section>
+        <!--section end-->
+        <!--section  -->
+        <section class="gray-bg">
+            <div class="container">
+                <div class="clients-carousel-wrap fl-wrap">
+                    <div class="cc-btn   cc-prev"><i class="fal fa-angle-left"></i></div>
+                    <div class="cc-btn cc-next"><i class="fal fa-angle-right"></i></div>
+                    <div class="clients-carousel">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a href="#" class="client-item"><img src="images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a href="#" class="client-item"><img src="images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a href="#" class="client-item"><img src="images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a href="#" class="client-item"><img src="images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a href="#" class="client-item"><img src="images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a href="#" class="client-item"><img src="images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--section end-->
+    </div>
+    <!--content end-->
+</div>
+<!-- wrapper end-->
