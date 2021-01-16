@@ -364,10 +364,8 @@
         <script src="/tema/js/searchbox.js"></script>
         <script src="/tema/js/sayfalama.js"></script>
 
+        {{#if harita}}
         <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
-
-
-
         <script>
             $(function () {
                 if (document.getElementById("singleMap")) {
@@ -389,6 +387,7 @@
                 }
             })
         </script>
+        {{/if}}
 
     </body>
 
