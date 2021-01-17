@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 var path = require('path');
 var cookieParser = require('cookie-parser');
-//var logger = require('morgan');
+var logger = require('morgan');
 const env = require('./env');
 
 //Helpers
@@ -49,7 +49,7 @@ app.engine('hbs', handlebars({
 
 app.use(compression());
 app.use(minify());
-//app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

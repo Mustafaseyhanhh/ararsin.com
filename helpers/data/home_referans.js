@@ -1,42 +1,21 @@
 home_referans = [{
-    "image": "dememe",
-    "title": "hak"
+    "image": "philips-ararsin.png",
+    "title": "philips-ararsin"
 }, {
-    "image": "dememe",
-    "title": "hak"
+    "image": "acun-medya-ararsin.png",
+    "title": "acun-medya-ararsin"
 }, {
-    "image": "dememe",
-    "title": "hak"
+    "image": "arzum-ararsin.png",
+    "title": "arzum-ararsin"
 }, {
-    "image": "dememe",
-    "title": "hak"
+    "image": "hepsiburada-com-ararsin.png",
+    "title": "hepsiburada-com-ararsin"
 }, {
-    "image": "dememe",
-    "title": "hak"
+    "image": "kuveyt-turk-ararsin.png",
+    "title": "kuveyt-turk-ararsin"
 }, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
-}, {
-    "image": "dememe",
-    "title": "hak"
+    "image": "nesine-com-ararsin.png",
+    "title": "nesine-com-ararsin"
 }]
 
 module.exports = {
