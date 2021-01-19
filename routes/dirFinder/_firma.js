@@ -4,7 +4,6 @@ var {Il,Ilce} = require('../../models/konum')
 
 /* GET users listing. */
 function Sfirma (req, res, next) {
-    console.log("************************************ Doğru sayfa")
     Subs.findOne({slug:req.params.il_firma_kategori})
     .then((subs)=>{
         SubsData.findOne({subs_id:subs._id})
@@ -14,10 +13,10 @@ function Sfirma (req, res, next) {
                 Il.findById(subs.il).then((il)=>{
                     Ilce.findById(subs.ilce)
                     .then((ilce)=>{
-                        if (subs.baslik == ""){
-                            title = subs.kisa_baslik +" - "+ kategori.adi +" - "+ il.adi +" - "+ ilce.adi
+                        if (subs.ek_baslik == ""){
+                            title = subs.baslik +" - "+ kategori.adi +" - "+ il.adi +" - "+ ilce.adi
                         }else{
-                            title = subs.kisa_baslik +" - "+ subs.baslik +" - "+ kategori.adi +" - "+ il.adi +" - "+ ilce.adi
+                            title = subs.baslik +" - "+ subs.ek_baslik +" - "+ kategori.adi +" - "+ il.adi +" - "+ ilce.adi
                         }
                         //console.log(data)
                         keywords = data["etiketler"]
