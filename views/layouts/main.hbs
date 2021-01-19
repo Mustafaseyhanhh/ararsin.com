@@ -4,14 +4,15 @@
     <head>
         <!--=============== basic  ===============-->
         <meta charset="UTF-8">
-        <title>Firma Adı - il - ilçe - kategori</title>
+        <title>{{title}}</title>
+        <!-- <title>Firma Adı - il - ilçe - kategori</title> -->
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!--<meta name="robots" content="index, follow" />-->
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="keywords" content="-------------- 130 karakter olacak -----------------" />
-        <meta name="description" content="-------------- 130 karakter olacak -----------------" />
-        <Link rel="canonical" href="/firma-ismi-slug/" />
+        <meta name="keywords" content="{{#each keywords}}{{this}},{{/each}}ararsin,firma rehberi" />
+        <meta name="description" content="{{description}}" />
+        <Link rel="canonical" href="{{canonical}}" />
         
         <!--=============== css  ===============-->
         <link type="text/css" rel="stylesheet" href="/tema/css/reset.css">
@@ -99,7 +100,7 @@
                                 <!-- header-search-input -->
                                 <div class="header-search-input header-search-input-50">
                                     <label><i class="fal fa-handshake-alt"></i></label>
-                                    <input type="text" placeholder="Firma Adı, Kategori" name="kutu1" value="" required
+                                    <input type="text" placeholder="Firma Adı, Kategori" name="q" value="" required
                                         oninput="this.setCustomValidity('')"
                                         oninvalid="this.setCustomValidity('Aramak istediğiniz ismi yada kategoriyi giriniz.')" />
                                 </div>
@@ -107,7 +108,7 @@
                                 <!-- header-search-input -->
                                 <div class="header-search-input header-search_selectinpt header-search-input-50 "
                                     id="locHeader" aria-required="true">
-                                    <select class="chosen-select on-radius" name="kutu2" id="Headerkutu2">
+                                    <select class="chosen-select on-radius" name="l" id="Headerkutu2">
                                         <option value="Tüm Türkiye">Tüm Türkiye</option>
                                     </select>
                                 </div>
@@ -371,7 +372,7 @@
                 if (document.getElementById("singleMap")) {
                     map = new OpenLayers.Map("singleMap");
                     map.addLayer(new OpenLayers.Layer.OSM());
-                    var lonLat = new OpenLayers.LonLat(34.809478759765625000, 39.817958831787109000)
+                    var lonLat = new OpenLayers.LonLat({{data.map_xy.boylam}}, {{data.map_xy.enlem}})
                         .transform(
                             new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
                             map.getProjectionObject() // to Spherical Mercator Projection

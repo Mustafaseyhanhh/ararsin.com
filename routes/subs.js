@@ -5,7 +5,7 @@ var slug = require('slug')
 
 /* GET home page. */
 router.get('/subs', function(req, res, next) {
-  res.render('themplate/subs/subsDefault', { title: 'Express' })
+  res.render('themplate/subs/subsDefault', { title: 'Express' ,harita:true})
 });
 
 module.exports = router;

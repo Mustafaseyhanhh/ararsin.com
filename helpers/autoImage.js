@@ -12,7 +12,6 @@ function autoImage(slug, text) {
     var fileNameTema = path.join(__dirname, '../public/subs_image_auto/subsdef_' + num + '.jpg');
     var fileNameNew = path.join(__dirname, '../public/subs_image_auto/' + slug + '.jpg');
     var fo = path.join(__dirname, '../public/font/roboto_bold.fnt');
-    console.log("---------------------",fo);
     var dimensions = sizeOf(fileNameTema);
     Jimp.read(fileNameTema).then((image) => {
         Jimp.loadFont(fo).then(font => {

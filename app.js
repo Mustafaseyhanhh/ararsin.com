@@ -13,6 +13,8 @@ const env = require('./env');
 //Helpers
 const {logo, karakter, each_limit, date_format, iff, footer_blog, footer_etiket,home_referans} = require('./helpers/default')
 
+//Api Routes
+var subsEkleme = require('./routes/api/subsEkleme');
 //Main Routes
 var anasayfaRouter = require('./routes/anasayfa');
 var aramaRouter = require('./routes/arama');
@@ -64,6 +66,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+//Api Routes
+app.use('/', subsEkleme);
 //Main Routes
 app.use('/', anasayfaRouter);
 app.use('/', aramaRouter);

@@ -4,8 +4,8 @@ var {Il,Ilce,Mahalle}=require('./konum')
 
 
 const SubsSchema = new mongoose.Schema({
-    kisa_baslik : {type:String},
     baslik : {type:String,required:true},
+    ek_baslik : {type:String},
     slug : {type:String,required:true},
     priority : {type: Number, default:1},
     kategori : {type:mongoose.Schema.Types.ObjectId,ref:'Kategori',required:true},
@@ -30,13 +30,13 @@ const SubsDataSchema = new mongoose.Schema({
     etiketler : [],
     ziyaretci_sayisi : {type: Number, default:0},
     hizmet_bolgesi : {type:String,default:'Hizmet Bölgesi Belirtilmemiştir.'},
-    map_xy : [],
+    map_xy : {enlem:{type:String},boylam:{type:String}},
     sosyal_medya : [{logo:{type:String},text:{link:String}}],
     hizmetler : [{logo:{type:String},text:{type:String}}],
     numara : [],
     website : [],
     email : [],
-    hakkinda_uzun : {type:String},
+    hakkinda_uzun : [],
 })
 
 

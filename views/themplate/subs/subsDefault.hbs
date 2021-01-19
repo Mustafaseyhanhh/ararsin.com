@@ -10,22 +10,22 @@
             </div>   -->
             <div class="container">
                 <div class="breadcrumbs inline-breadcrumbs fl-wrap mobile-close">
-                    <a href="#">Home</a><a href="#">Listings</a><a href="#">New York</a><span>Listing Single</span>
+                    {{#each breadcrumb}}<a href="#">{{this}}</a>{{/each}}<span>{{subs.baslik}}</span>
                 </div>
                 <div class="list-single-header-item  fl-wrap">
                     <div class="row">
                         <div class="col-md-9">
-                            <h1>Iconic Cafe in Manhattan <span class="verified-badge"><i
+                            <h1>{{subs.baslik}}<span class="verified-badge"><i
                                         class="fal fa-check"></i></span></h1>
                             <!--    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i>  70 Bright St New York, USA</a> <a href="#"> <i class="fal fa-phone"></i>+38099231212</a> <a href="#"><i class="fal fa-envelope"></i> yourmail@domain.com</a></div> -->
                         </div>
                         <div class="col-md-3">
                             <a class="fl-wrap list-single-header-column custom-scroll-link " href="#sec5">
                                 <div class="listing-rating-count-wrap single-list-count">
-                                    <div class="review-score">4.1</div>
-                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="4"></div>
+                                    <div class="review-score">{{subs.yildiz}}.0</div>
+                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="{{subs.yildiz}}"></div>
                                     <br>
-                                    <div class="reviews-count">2 reviews</div>
+                                    <div class="reviews-count">2 değerlendirme</div>
                                 </div>
                             </a>
                         </div>
@@ -34,15 +34,12 @@
                 <div class="list-single-header_bottom fl-wrap mobile-close">
                     <a class="listing-item-category-wrap" href="#">
                         <div class="listing-item-category  red-bg"><i class="fal fa-cheeseburger"></i></div>
-                        <span>Restaurants</span>
+                        <span>{{kategori.adi}}</span>
                     </a>
-                    <div class="list-single-author"> <a href="author-single.html"><span class="author_avatar"> <img
-                                    alt='' src='/images/avatar/1.jpg'> </span>By Alisa Noory</a></div>
-                    <div class="list-single-author"> <a href="author-single.html"><span class="author_avatar"> <img
-                                    alt='' src='/images/avatar/1.jpg'> </span>By Alisa Noory</a></div>
+                    <div class="list-single-author"> <a href="author-single.html"><span class="author_avatar"> <img  alt='' src='/subs_profil_auto/{{subs.profil_image}}'> </span>{{il.adi}} - {{ilce.adi}}</a></div>
                     <div class="list-single-stats">
                         <ul class="no-list-style">
-                            <li><span class="viewed-counter"><i class="fas fa-eye"></i> Viewed - 156 </span></li>
+                            <li><span class="viewed-counter"><i class="fas fa-eye"></i> Ziyaret - {{data.ziyaretci_sayisi}} </span></li>
                         </ul>
                     </div>
                 </div>
@@ -83,7 +80,7 @@
                     <!-- list-single-main-wrapper-col -->
                     <div class="col-md-8">
                         <div class="list-single-main-media fl-wrap">
-                            <img src="/auto/subs_def_image.jpg" class="respimg" alt="">
+                            <img src="/subs_image_auto/{{subs.banner_image}}" class="respimg" alt="">
                         </div>
                         <!-- list-single-main-wrapper -->
                         <div class="list-single-main-wrapper fl-wrap">
@@ -96,16 +93,12 @@
                                     <div class="box-widget-content bwc-nopad">
                                         <div class="list-author-widget-contacts list-item-widget-contacts bwc-padside">
                                             <ul class="no-list-style">
-                                                <li><span><i class="fal fa-globe-europe"></i> Firma ismi
-                                                        kısa_başlık+başlık </span></li>
+                                                <li><span><i class="fal fa-globe-europe"></i> {{subs.baslik}} - {{subs.ek_baslik}} </span></li>
                                                 <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a
-                                                        href="#">USA 27TH Brooklyn NY</a></li>
-                                                <li><span><i class="fal fa-phone"></i> Phone :</span> <a
-                                                        href="#">+7(123)987654</a></li>
-                                                <li><span><i class="fal fa-envelope"></i> Mail :</span> <a
-                                                        href="#">AlisaNoory@domain.com</a></li>
-                                                <li><span><i class="fal fa-browser"></i> Website :</span> <a
-                                                        href="#">themeforest.net</a></li>
+                                                        href="#">{{subs.adres}}</a></li>
+                                                <li><span><i class="fal fa-phone"></i> Phone :</span> {{#each data.numara}}<a href="tel:{{this}}">{{this}}</a>{{/each}}</li>
+                                                <li><span><i class="fal fa-envelope"></i> Mail :</span> {{#each data.email}}<a href="mailto:{{this}}">{{this}}</a>{{/each}}</li>
+                                                <li><span><i class="fal fa-browser"></i> Website :</span> {{#each data.website}}<a href="https://ararsin.com/iletisim">{{this}}</a>{{/each}}</li>
                                             </ul>
                                         </div>
                                         <div class="list-widget-social bottom-bcw-box  fl-wrap">
@@ -145,17 +138,8 @@
                                     <h3>Firma Tanıtımı</h3>
                                 </div>
                                 <div class="list-single-main-item_content fl-wrap">
-                                    <p>Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet
-                                        eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper
-                                        dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed
-                                        pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus
-                                        et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit.
-                                        Sed non neque faucibus, condimentum lectus at, accumsan enim. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
-                                        neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere
-                                        sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat.
-                                        Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa
-                                        faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
+                                    <p>{{subs.hakkinda_kisa}}</p>
+                                    
                                 </div>
                             </div>
                             <!-- list-single-main-item end -->
@@ -165,17 +149,10 @@
                                     <h3>Hizmet Tanıtımı</h3>
                                 </div>
                                 <div class="list-single-main-item_content fl-wrap">
-                                    <p>Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet
-                                        eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper
-                                        dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed
-                                        pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus
-                                        et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit.
-                                        Sed non neque faucibus, condimentum lectus at, accumsan enim. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
-                                        neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere
-                                        sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat.
-                                        Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa
-                                        faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
+                                    {{#each data.hakkinda_uzun}}
+                                    <p>{{this}}</p>
+                                    {{/each}}
+                                    
                                 </div>
                             </div>
                             <!-- list-single-main-item end -->
@@ -187,12 +164,9 @@
                                 <div class="list-single-main-item_content fl-wrap">
                                     <div class="listing-features fl-wrap">
                                         <ul class="no-list-style">
-                                            <li><a href="#"><i class="fa fa-rocket"></i> Elevator in building</a></li>
-                                            <li><a href="#"><i class="fa fa-wifi"></i> Free Wi Fi</a></li>
-                                            <li><a href="#"><i class="fa fa-motorcycle"></i> Free Parking</a></li>
-                                            <li><a href="#"><i class="fa fa-cloud"></i> Air Conditioned</a></li>
-                                            <li><a href="#"><i class="fa fa-shopping-cart"></i> Online Ordering</a></li>
-                                            <li><a href="#"><i class="fa fa-paw"></i> Pet Friendly</a></li>
+                                            {{#each data.hizmetler}}
+                                            <li><a href="#"><i class="fa fa-rocket"></i> {{this.text}}</a></li>
+                                            {{/each}}
                                         </ul>
                                     </div>
                                 </div>
@@ -204,65 +178,11 @@
                                     <h3>Hizmet Bölgesi</h3>
                                 </div>
                                 <div class="list-single-main-item_content fl-wrap">
-                                    <p>Hizmet bölgesi açıklaması</p>
+                                    <p>{{data.hizmet_bolgesi}}</p>
                                 </div>
                             </div>
                             <!-- list-single-main-item end -->
-                            <!-- list-single-main-item-->
-                            <div class="list-single-main-item fl-wrap block_box" id="galeri">
-                                <div class="list-single-main-item-title">
-                                    <h3>Galeri</h3>
-                                </div>
-                                <div class="list-single-main-item_content fl-wrap">
-                                    <div class="single-carousel-wrap fl-wrap lightgallery">
-                                        <div class="sc-next sc-btn color2-bg"><i class="fas fa-caret-right"></i></div>
-                                        <div class="sc-prev sc-btn color2-bg"><i class="fas fa-caret-left"></i></div>
-                                        <div class="single-carousel fl-wrap full-height">
-                                            <div class="swiper-container">
-                                                <div class="swiper-wrapper">
-                                                    <!-- swiper-slide-->
-                                                    <div class="swiper-slide">
-                                                        <div class="box-item">
-                                                            <img src="/images/all/1.jpg" alt="">
-                                                            <a href="/images/all/1.jpg" class="gal-link popup-image"><i
-                                                                    class="fa fa-search"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- swiper-slide end-->
-                                                    <!-- swiper-slide-->
-                                                    <div class="swiper-slide">
-                                                        <div class="box-item">
-                                                            <img src="/images/all/1.jpg" alt="">
-                                                            <a href="/images/all/1.jpg" class="gal-link popup-image"><i
-                                                                    class="fa fa-search"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- swiper-slide end-->
-                                                    <!-- swiper-slide-->
-                                                    <div class="swiper-slide">
-                                                        <div class="box-item">
-                                                            <img src="/images/all/1.jpg" alt="">
-                                                            <a href="/images/all/1.jpg" class="gal-link popup-image"><i
-                                                                    class="fa fa-search"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- swiper-slide end-->
-                                                    <!-- swiper-slide-->
-                                                    <div class="swiper-slide">
-                                                        <div class="box-item">
-                                                            <img src="/images/all/1.jpg" alt="">
-                                                            <a href="/images/all/1.jpg" class="gal-link popup-image"><i
-                                                                    class="fa fa-search"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- swiper-slide end-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- list-single-main-item end -->
+                            
 
                             <div class="list-single-facts fl-wrap">
                                 <div class="row">
@@ -335,11 +255,11 @@
                                     <h3>Detay</h3>
                                 </div>
                                 <div class="list-single-main-item_content fl-wrap">
-                                    <p>Otomatik olarka oluşacak açıklama</p>
-                                    <p><I>kategoti il</I></p>
-                                    <p><I>kategori ilçe</I></p>
-                                    <p><I>il kategori</I></p>
-                                    <p><I>ilce kategori</I></p>
+                                    <p>{{subs.baslik}} {{subs.ek_baslik}} firması {{il.adi}} ilinde {{ilce.adi}} ilçesinde {{kategori.adi}} kategorisinde hizmet vermektedir ve bu sayfadaki bilgilerden firma ile iletişime geçip bilgi alabilirsiniz.</p>
+                                    <p><I>{{kategori.adi}} {{il.adi}}</I></p>
+                                    <p><I>{{kategori.adi}} {{ilce.adi}}</I></p>
+                                    <p><I>{{il.adi}} {{kategori.adi}}</I></p>
+                                    <p><I>{{ilce.adi}} {{kategori.adi}}</I></p>
 
                                 </div>
                             </div>
@@ -486,12 +406,10 @@
                             <div class="box-widget opening-hours fl-wrap">
                                 <div class="box-widget-content">
                                     <div class="list-single-tags tags-stylwrap">
-                                        <a href="#">Hotel</a>
-                                        <a href="#">Hostel</a>
-                                        <a href="#">Room</a>
-                                        <a href="#">Spa</a>
-                                        <a href="#">Restourant</a>
-                                        <a href="#">Parking</a>
+                                        {{#each keywords}}
+                                        <a href="#">{{this}}</a>
+                                        {{/each}}
+                                        
                                     </div>
                                 </div>
                             </div>
