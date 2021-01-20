@@ -27,7 +27,9 @@ var iletisimRouter = require('./routes/more/iletisim');
 var sssRouter = require('./routes/more/sss');
 var blogRouter = require('./routes/more/blog');
 var paketlerRouter = require('./routes/more/paketler');
-var sitemapRouter = require('./routes/sitemap');
+var sitemapRouter = require('./routes/xml/sitemap');
+var blogSitemapRouter = require('./routes/xml/blog_sitemap');
+var imageSitemapRouter = require('./routes/xml/image_sitemap');
 var sozlesmelerRouter = require('./routes/more/sozlesmeler')
 var indexRouter = require('./routes/index')
 //Ajax Routes
@@ -85,6 +87,8 @@ app.use('/', indexRouter);
 app.use('/', serachboxRouter);
 //Genel Routes
 app.use('/', sitemapRouter);
+app.use('/', blogSitemapRouter);
+app.use('/', imageSitemapRouter);
 app.use('/', urlFinderRouter);
 
 mongoose.connect('mongodb://localhost:27017/'+env.DB_NAME, {

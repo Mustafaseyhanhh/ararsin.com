@@ -1,15 +1,14 @@
 var createError = require('http-errors');
 const xml_to = require('xml')
 var express = require('express');
-const env = require('../env')
+const env = require('../../env')
 var router = express.Router();
 
 // MODEL import
-var Sitemapurl = require('../models/sitemap');
-const sitemap = require('../models/sitemap');
+var Sitemapurl = require('../../models/subs').Subs;
 
 /* GET home page. */
-router.get('/sitemap:digit', function (req, res, next) {
+router.get('/image:digit', function (req, res, next) {
     return new Promise((resolve, reject) => {
         var sitemap = req.params.digit
         if (sitemap.slice(-4) == '.xml') {
@@ -27,11 +26,12 @@ router.get('/sitemap:digit', function (req, res, next) {
                     for (let step = 0; step < (page + 1); step++) {
                         sitemapList[0]["sitemapindex"].push({
                             sitemap: [{
-                                loc: env.DOMAIN_NAME + '/sitemap' + (step + 1) + '.xml'
+                                loc: env.DOMAIN_NAME + '/image' + (step + 1) + '.xml'
                             }]
                         })
-                        resolve(sitemapList)
+                        
                     }
+                    resolve(sitemapList)
                 })
             } else {
                 var digit = sitemap.replace('.xml', '')
@@ -45,30 +45,33 @@ router.get('/sitemap:digit', function (req, res, next) {
                     sitemapnum = parseInt(digit)
                     parsnum = env.SITEMAP_PARS_LIMIT
                     Sitemapurl.countDocuments((err, count) => {
-                        console.log(((sitemapnum - 1) * parsnum))
                         if (count > ((sitemapnum - 1) * parsnum)) {
                             Sitemapurl.find({}, (err, sitemapurl) => {
                                 var sitemapList = [{
                                     urlset: [{
                                         _attr: {
-                                            xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9'
-                                        }
+                                            xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
+                                            'xmlns:image':"http://www.google.com/schemas/sitemap-image/1.1"
+                                        },
                                     }]
                                 }]
                                 if (sitemapurl) {
                                     sitemapurl.forEach(element => {
                                         sitemapList[0]["urlset"].push({
                                             url: [{
-                                                loc: env.DOMAIN_NAME + element.loc
-                                            }, {
-                                                priority: element.priority
-                                            }, {
-                                                lastmod: Date(element.lastmod)
-                                            }]
+                                                loc: env.DOMAIN_NAME +"/"+element.slug,
+                                                
+                                            },{"image:image" : [
+                                                {"image:loc":env.DOMAIN_NAME+"/subs_image_auto/"+element.banner_image},
+                                                {"image:title":element.baslik}
+                                            ]}
+                                            
+                                        ]
                                         })
                                         //console.log(element.lastmod)
-                                        resolve(sitemapList)
+                                        
                                     })
+                                    resolve(sitemapList)
                                 } else {
                                     reject("Sorgu hatası oluştu")
                                 }
