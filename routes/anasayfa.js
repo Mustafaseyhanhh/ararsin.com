@@ -7,7 +7,7 @@ var env =  require('../env')
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    title = "Ararsın.com - Türkiye'nin en büyük firma rehberi"
+    title = "Ararsın.com - Türkiyenin en büyük firma rehberi"
     keywords = ["firma rehberi","ararsın","ararsin.com","firmalar","nerede"]
     description = "Firmaları ve müşterileri bir araya getiren en büyük platform. Ararsın com ile hemen iletişime geçip yeni müşteriler kazanın."
     canonical = env.DOMAIN_NAME
