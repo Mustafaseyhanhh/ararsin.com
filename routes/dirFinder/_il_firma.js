@@ -1,4 +1,4 @@
-var Firma = require('./Firma')
+var Firma = require('./firma')
 
 /* GET users listing. */
 function SilSfirma (req, res, next) {
