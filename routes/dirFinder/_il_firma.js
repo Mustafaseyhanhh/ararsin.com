@@ -1,10 +1,8 @@
-var {Subs} = require('../../models/subs');
+var Firma = require('./Firma')
 
 /* GET users listing. */
 function SilSfirma (req, res, next) {
-    Subs.find({slug:req.params.ilce_kategori_firma}).then((subs)=>{
-        res.render('themplate/subs/subsDefault', { title: 'Express' , subs})
-    })
+    Firma(req.params.ilce_kategori_firma, req, res, next)
 };
 
 module.exports = SilSfirma;

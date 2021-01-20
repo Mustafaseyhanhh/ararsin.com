@@ -1,4 +1,5 @@
 var express = require('express');
+var createError = require('http-errors');
 var router = express.Router();
 var {Il,Ilce} = require('../models/konum')
 var {Subs} = require('../models/subs')
@@ -33,7 +34,8 @@ router.get('/:il_firma_kategori', function(req, res, next) {
                         if (subs){
                             Sfirma(req, res, next)                    
                         }else{
-                            res.send("Url Finder Error 1 (birinci parametre il,firma, kategori olmalıdır.)");
+                            reject="Url Finder Error 1 (birinci parametre il,firma, kategori olmalıdır.)"
+                            next(createError(404, reject))
                         }
                     })
                 }
@@ -61,7 +63,8 @@ router.get('/:il/:ilce_kategori_firma', function(req, res, next) {
                                 if (subs){
                                     SilSfirma(req, res, next)
                                 }else{
-                                    res.send("Url Finder Error 3 (ikinci parametre ilçe, kategori, firma olmalıdır)");
+                                    reject="Url Finder Error 3 (ikinci parametre ilçe, kategori, firma olmalıdır)"
+                                    next(createError(404, reject))
                                 }
                             })
                         }
@@ -69,7 +72,8 @@ router.get('/:il/:ilce_kategori_firma', function(req, res, next) {
                 }
             })
         }else{
-            res.send("Url Finder Error 2 (ilk parametre il olmalı)");
+            reject="Url Finder Error 2 (ilk parametre il olmalı)"
+            next(createError(404, reject))
         }
     })
     
@@ -92,13 +96,15 @@ router.get('/:il_firma/:ilce_il/:ilce_kategori_firma', function(req, res, next) 
                                 if (subs){
                                     SilSilceSfirma(req, res, next)
                                 }else{
-                                    res.send("Url Finder Error 8 (üçüncü parametre kategori,firma olmalıdır)");
+                                    reject="Url Finder Error 8 (üçüncü parametre kategori,firma olmalıdır)"
+                                    next(createError(404, reject))
                                 }
                             })
                         }
                     })
                 }else{
-                    res.send("Url Finder Error 7 (ilk parametre il ise ikinvi parametre ilçe olmalıdır)");
+                    reject="Url Finder Error 7 (ilk parametre il ise ikinvi parametre ilçe olmalıdır)"
+                    next(createError(404, reject))
                 }
             })            
         }else{
@@ -113,15 +119,18 @@ router.get('/:il_firma/:ilce_il/:ilce_kategori_firma', function(req, res, next) 
                                 if (ilce){
                                     SfirmaSilSilce(req, res, next)
                                 }else{
-                                    res.send("Url Finder Error 6 ( üçüncü parametre ilce olmalıdır )");
+                                    reject="Url Finder Error 6 ( üçüncü parametre ilce olmalıdır )"
+                                    next(createError(404, reject))
                                 }
                             })
                         }else{
-                            res.send("Url Finder Error 5 ( ikinci parametre il olmalıdır )");
+                            reject="Url Finder Error 5 ( ikinci parametre il olmalıdır )"
+                            next(createError(404, reject))
                         }
                     })
                 }else{
-                    res.send("Url Finder Error 4 ( ilk parametre il yada firma olmalıdır )");
+                    reject="Url Finder Error 4 ( ilk parametre il yada firma olmalıdır )"
+                    next(createError(404, reject))
                 }
             })
         }

@@ -3,9 +3,6 @@ const xml_to = require('xml')
 var express = require('express');
 const env = require('../env')
 var router = express.Router();
-const p = (e) => {
-    console.log("*********** LOG:", e)
-}
 
 // MODEL import
 var Sitemapurl = require('../models/sitemap');

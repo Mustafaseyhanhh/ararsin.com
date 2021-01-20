@@ -58,8 +58,9 @@
                     </ul>
                 </nav>
                 <div class="scroll-nav-wrapper-opt">
-                    <a href="#" class="scroll-nav-wrapper-opt-btn"> <i class="fas fa-phone"></i> İletişime Geç Ara </a>
-                    <a href="#" class="scroll-nav-wrapper-opt-btn showshare"> <i class="fas fa-map"></i> Yol Tarifi </a>
+                    <a href="tel:{{tel}}" class="scroll-nav-wrapper-opt-btn"> <i class="fas fa-phone"></i> İletişime Geç Ara </a>
+                    <a href="{{harita_linki}}" target="_blank" class="scroll-nav-wrapper-opt-btn"> <i class="fas fa-map"></i> Yol Tarifi </a>
+                    <!-- <a href="#" class="scroll-nav-wrapper-opt-btn showshare"> <i class="fas fa-map"></i> Yol Tarifi </a>-->
                     <div class="share-holder hid-share">
                         <div class="share-container  isShare"></div>
                     </div>
@@ -80,7 +81,7 @@
                     <!-- list-single-main-wrapper-col -->
                     <div class="col-md-8">
                         <div class="list-single-main-media fl-wrap">
-                            <img src="/subs_image_auto/{{subs.banner_image}}" class="respimg" alt="">
+                            <img src="/subs_image_auto/{{subs.banner_image}}" class="respimg" alt="{{subs.baslik}}">
                         </div>
                         <!-- list-single-main-wrapper -->
                         <div class="list-single-main-wrapper fl-wrap">
@@ -93,10 +94,11 @@
                                     <div class="box-widget-content bwc-nopad">
                                         <div class="list-author-widget-contacts list-item-widget-contacts bwc-padside">
                                             <ul class="no-list-style">
-                                                <li><span><i class="fal fa-globe-europe"></i> {{subs.baslik}} - {{subs.ek_baslik}} </span></li>
-                                                <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a
+                                                <div class="hide"><h2>{{subs.baslik}} {{subs.ek_baslik}}</h2></div>
+                                                <li><span><i class="fal fa-globe-europe"></i>{{subs.baslik}} {{subs.ek_baslik}} </span></li>
+                                                <li><span><i class="fal fa-map-marker"></i> Adres :</span> <a
                                                         href="#">{{subs.adres}}</a></li>
-                                                <li><span><i class="fal fa-phone"></i> Phone :</span> {{#each data.numara}}<a href="tel:{{this}}">{{this}}</a>{{/each}}</li>
+                                                <li><span><i class="fal fa-phone"></i> Telefon :</span> {{#each data.numara}}<a href="tel:{{this}}">{{this}}</a>{{/each}}</li>
                                                 <li><span><i class="fal fa-envelope"></i> Mail :</span> {{#each data.email}}<a href="mailto:{{this}}">{{this}}</a>{{/each}}</li>
                                                 <li><span><i class="fal fa-browser"></i> Website :</span> {{#each data.website}}<a href="https://ararsin.com/iletisim">{{this}}</a>{{/each}}</li>
                                             </ul>
@@ -255,7 +257,7 @@
                                     <h3>Detay</h3>
                                 </div>
                                 <div class="list-single-main-item_content fl-wrap">
-                                    <p>{{subs.baslik}} {{subs.ek_baslik}} firması {{il.adi}} ilinde {{ilce.adi}} ilçesinde {{kategori.adi}} kategorisinde hizmet vermektedir ve bu sayfadaki bilgilerden firma ile iletişime geçip bilgi alabilirsiniz.</p>
+                                    <p><strong>{{subs.baslik}} {{subs.ek_baslik}} firması</strong> {{il.adi}} ilinde {{ilce.adi}} ilçesinde {{kategori.adi}} kategorisinde hizmet vermektedir ve bu sayfadaki bilgilerden firma ile iletişime geçip bilgi alabilirsiniz.</p>
                                     <p><I>{{kategori.adi}} {{il.adi}}</I></p>
                                     <p><I>{{kategori.adi}} {{ilce.adi}}</I></p>
                                     <p><I>{{il.adi}} {{kategori.adi}}</I></p>

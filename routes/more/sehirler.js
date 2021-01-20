@@ -5,7 +5,12 @@ var {Il,Ilce} = require('../../models/konum')
 /* GET users listing. */
 router.get('/sehirler', function(req, res, next) {
     Il.find({}).then((il)=>{
-        res.render('themplate/more/basic_list', { title: 'Tüm Şehirler' , il})
+        title = "Tüm Şehirler - Ararsın.com"
+        keywords = ["şehirler"]
+        description = "Sitemizdeki tüm şehirler"
+        canonical = env.DOMAIN_NAME+"/sehirler"
+        breadcrumb = []
+        res.render('themplate/more/basic_list', { title,keywords,description,canonical,breadcrumb , il})
     })
 });
 

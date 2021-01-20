@@ -2,6 +2,7 @@ var {Subs} = require('../../models/subs');
 var Sayfalama =  require('../../helpers/sayfalama')
 var {Il} = require("../../models/konum");
 var Kategori = require("../../models/kategori");
+var env =  require('../../env')
 
 
 /* GET users listing. */
@@ -12,7 +13,13 @@ function SilSkategori (req, res, next) {
         Kategori.findOne({slug:req.params.ilce_kategori_firma})
         .then((kategori)=>{
             Subs.find({il:il._id,kategori:kategori._id}).skip(p.skip).limit(p.limit).then((subs)=>{
-                res.render('themplate/arama', { title: 'Express' , subs,p})
+                title = il.adi+" "+kategori.adi+" firmaları - Ararsın.com"
+                keywords = [il.adi+" firmaları",kategori.adi+" firmaları",il.adi+" "+kategori.adi+" firmaları"]
+                description = il.adi+" "+kategori.adi+" firmaları - Ararsın.com"
+                canonical = env.DOMAIN_NAME+"/"+il.slug+'/'+kategori.slug
+                breadcrumb = [il.adi,kategori.adi]
+                q = il.adi+" - ",kategori.adi
+                res.render('themplate/arama', {subs,p,title,keywords,description,canonical,breadcrumb,q})
             })
         })
     })

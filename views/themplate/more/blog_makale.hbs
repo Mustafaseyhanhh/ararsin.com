@@ -5,7 +5,7 @@
                     <section class="gray-bg no-top-padding-sec" id="sec1">
                         <div class="container">
                             <div class="breadcrumbs inline-breadcrumbs fl-wrap block-breadcrumbs">
-                                <a href="#">Home</a><a href="#">Blog</a> <span>Blog Single</span> 
+                                <a href="#">Ararsin.com</a><a href="#">Blog</a> <span>{{blog.baslik}}</span> 
                                 <div  class="showshare brd-show-share color2-bg"> <i class="fas fa-share"></i> Paylaş </div>
                             </div>
                             <div class="share-holder hid-share sing-page-share top_sing-page-share">
@@ -21,7 +21,7 @@
                                                 <img src="/images/all/1.jpg" class="respimg" alt="">
                                             </div>
                                             <div class="list-single-main-item fl-wrap block_box">
-                                                <h2 class="post-opt-title"><a href="blog-single.html">Here’s What People Are Saying About Us.</a></h2>
+                                                <h2 class="post-opt-title"><a href="blog-single.html">{{blog.baslik}}</a></h2>
                                                 <div class="post-author"><a href="#"><img src="/images/avatar/1.jpg" alt=""><span>{{blog.yazar}}</span></a></div>
                                                 <div class="post-opt">
                                                     <ul class="no-list-style">
@@ -29,8 +29,9 @@
                                                         <li><i class="fal fa-eye"></i> <span>{{blog.ziyaretci}}</span></li>
                                                         <li><i class="fal fa-tags"></i>
                                                         {{#each_limit blog.etiketler 2}}
-                                                            <a href="#">{{this}},</a>
-                                                        {{/each_limit}}</li>
+                                                            <a href="#">{{this}}, </a>
+                                                        {{/each_limit}}<a href="#">ararsin.com</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <span class="fw-separator"></span> 

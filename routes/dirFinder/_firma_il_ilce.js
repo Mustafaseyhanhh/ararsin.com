@@ -1,6 +1,8 @@
+var Firma = require('./Firma')
+
 /* GET users listing. */
 function SfirmaSilSilce (req, res, next) {
-    res.send("ararsin.com/firma/il/ilce");
+    Firma(req.params.il_firma, req, res, next)
 };
 
 module.exports = SfirmaSilSilce;
