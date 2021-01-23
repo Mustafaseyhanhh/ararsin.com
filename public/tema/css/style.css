@@ -5451,7 +5451,7 @@ section.gray-section .section-separator {
     color: #888DA0;
     font-weight: 400;
     margin:0 6px 6px 0;
-	background: #F5F6FA;
+	/*background: #F5F6FA;*/
     border: 1px solid #eee;
 	transition: all 0.2s  ease-in-out;
 }
