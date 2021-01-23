@@ -94,30 +94,51 @@
                                 </div>
                                 <div class="box-widget">
                                     <div class="box-widget-content bwc-nopad">
+                                        {{#if subs.premium}}
                                         <div class="list-author-widget-contacts list-item-widget-contacts bwc-padside">
                                             <ul class="no-list-style">
                                                 <div class="hide"><h2>{{subs.baslik}} {{subs.ek_baslik}}</h2></div>
                                                 <li><span><i class="fal fa-globe-europe"></i>{{subs.baslik}} {{subs.ek_baslik}} </span></li>
                                                 <li><span><i class="fal fa-map-marker"></i> Adres :</span> <a href="#">{{subs.adres}}</a></li>
                                                 {{#each data.numara}}<li><span><i class="fal fa-phone"></i> Telefon :</span> <a href="tel:{{this}}">{{this}}</a></li>{{/each}}
+
                                                 {{#each data.email}}<li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="mailto:{{this}}">{{this}}</a></li>{{/each}}
-                                                {{#each data.website}}<li><span><i class="fal fa-browser"></i> Website :</span> <a href="https://ararsin.com/iletisim">{{this}}</a></li>{{/each}}
+                                                {{#each data.website}}<li><span><i class="fal fa-browser"></i> Website :</span> <a href="https://{{this}}">{{this}}</a></li>{{/each}}
                                             </ul>
                                         </div>
                                         <div class="list-widget-social bottom-bcw-box  fl-wrap">
                                             <ul class="no-list-style">
-                                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                                </li>
-                                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                                {{#each data.sosyal_medya}}<li><a href="{{this.text}}" target="_blank"><i class="fab {{this.logo}}"></i></a></li>{{/each}}
+                                                
                                             </ul>
                                             <div class="bottom-bcw-box_link"><a href="#"
                                                     class="show-single-contactform tolt" data-microtip-position="top"
                                                     data-tooltip="İletişim Kurun"><i class="fal fa-envelope"></i></a>
                                             </div>
                                         </div>
+                                        {{else}}
+                                        <div class="list-author-widget-contacts list-item-widget-contacts bwc-padside">
+                                            <ul class="no-list-style">
+                                                <div class="hide"><h2>{{subs.baslik}} {{subs.ek_baslik}}</h2></div>
+                                                <li><span><i class="fal fa-globe-europe"></i>{{subs.baslik}} {{subs.ek_baslik}} </span></li>
+                                                <li><span><i class="fal fa-map-marker"></i> Adres :</span> <a href="#">{{subs.adres}}</a></li>
+                                                {{#each data.numara}}<li><span><i class="fal fa-phone"></i> Telefon :</span> <a href="">{{this}}</a></li>{{/each}}
+
+                                                {{#each data.email}}<li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="">{{this}}</a></li>{{/each}}
+                                                {{#each data.website}}<li><span><i class="fal fa-browser"></i> Website :</span> <a href="https://ararsin.com/iletisim">{{this}}</a></li>{{/each}}
+                                            </ul>
+                                        </div>
+                                        <div class="list-widget-social bottom-bcw-box  fl-wrap">
+                                            <ul class="no-list-style">
+                                                {{#each data.sosyal_medya}}<li><a href=""><i class="fab {{this.logo}}"></i></a></li>{{/each}}
+                
+                                            </ul>
+                                            <div class="bottom-bcw-box_link"><a href="#"
+                                                    class="show-single-contactform tolt" data-microtip-position="top"
+                                                    data-tooltip="İletişim Kurun"><i class="fal fa-envelope"></i></a>
+                                            </div>
+                                        </div>
+                                        {{/if}}
                                     </div>
                                 </div>
                             </div>

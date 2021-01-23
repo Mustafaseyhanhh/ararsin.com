@@ -31,7 +31,7 @@ const SubsDataSchema = new mongoose.Schema({
     ziyaretci_sayisi : {type: Number, default:0},
     hizmet_bolgesi : {type:String,default:'Hizmet Bölgesi Belirtilmemiştir.'},
     map_xy : {enlem:{type:String},boylam:{type:String}},
-    sosyal_medya : [{logo:{type:String},text:{link:String}}],
+    sosyal_medya : [{logo:{type:String},text:{type:String}}],
     hizmetler : [{logo:{type:String},text:{type:String}}],
     numara : [],
     website : [],

@@ -2589,6 +2589,7 @@ section.gray-section .section-separator {
 } 
 .subscribe-header p {
 	color:rgba(255,255,255,0.6);
+	font-size: 12px;
 }
 #subscribe .enteremail {
     background: #fff;
@@ -2813,6 +2814,7 @@ section.gray-section .section-separator {
 	text-align: left;
 	line-height:24px;
 	margin-bottom:10px;
+	font-size: 12px;
 }
 .footer-contacts {
 	margin-top:15px;
