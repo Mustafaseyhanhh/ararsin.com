@@ -7,7 +7,6 @@ var env =  require('../../env')
 function Firma (firma_slug, req, res, next) {
     Subs.findOne({slug:firma_slug})
     .then((subs)=>{
-        console.log("////////////////////",firma_slug)
         SubsData.findOne({subs_id:subs._id})
         .then((data)=>{
             Kategori.findById(subs.kategori)
@@ -26,7 +25,7 @@ function Firma (firma_slug, req, res, next) {
                             tel=""
                         }
                         if (data.map_xy.enlem){
-                            harita_linki="https://www.google.com.tr/maps/dir/"+data.map_xy.enlem+","+data.map_xy.boylam+"/@"+data.map_xy.enlem+","+data.map_xy.boylam+",16z"
+                            harita_linki="http://www.google.com/maps/place/"+data.map_xy.enlem+","+data.map_xy.boylam
                         }else{
                             harita_linki=""
                         }
