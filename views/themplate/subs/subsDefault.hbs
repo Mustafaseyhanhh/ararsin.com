@@ -53,8 +53,10 @@
                         <li><a class="act-scrlink" href="#harita"><i class="fal fa-images"></i> Harita</a></li>
                         <li><a href="#sec2"><i class="fal fa-info"></i>Hakkında</a></li>
                         <li><a href="#sec3"><i class="fal fa-award"></i>Hizmetler</a></li>
+                        {{#if a}}
                         <li><a href="#galeri"><i class="fal fa-image"></i>Galeri</a></li>
                         <li><a href="#sec5"><i class="fal fa-comments-alt"></i>Yorumlar</a></li>
+                        {{/if}}
                     </ul>
                 </nav>
                 <div class="scroll-nav-wrapper-opt">
@@ -96,11 +98,10 @@
                                             <ul class="no-list-style">
                                                 <div class="hide"><h2>{{subs.baslik}} {{subs.ek_baslik}}</h2></div>
                                                 <li><span><i class="fal fa-globe-europe"></i>{{subs.baslik}} {{subs.ek_baslik}} </span></li>
-                                                <li><span><i class="fal fa-map-marker"></i> Adres :</span> <a
-                                                        href="#">{{subs.adres}}</a></li>
-                                                <li><span><i class="fal fa-phone"></i> Telefon :</span> {{#each data.numara}}<a href="tel:{{this}}">{{this}}</a>{{/each}}</li>
-                                                <li><span><i class="fal fa-envelope"></i> Mail :</span> {{#each data.email}}<a href="mailto:{{this}}">{{this}}</a>{{/each}}</li>
-                                                <li><span><i class="fal fa-browser"></i> Website :</span> {{#each data.website}}<a href="https://ararsin.com/iletisim">{{this}}</a>{{/each}}</li>
+                                                <li><span><i class="fal fa-map-marker"></i> Adres :</span> <a href="#">{{subs.adres}}</a></li>
+                                                {{#each data.numara}}<li><span><i class="fal fa-phone"></i> Telefon :</span> <a href="tel:{{this}}">{{this}}</a></li>{{/each}}
+                                                {{#each data.email}}<li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="mailto:{{this}}">{{this}}</a></li>{{/each}}
+                                                {{#each data.website}}<li><span><i class="fal fa-browser"></i> Website :</span> <a href="https://ararsin.com/iletisim">{{this}}</a></li>{{/each}}
                                             </ul>
                                         </div>
                                         <div class="list-widget-social bottom-bcw-box  fl-wrap">
@@ -127,9 +128,7 @@
                                     <h3>Harita </h3>
                                 </div>
                                 <div class="box-widget">
-                                    <div class="map-container">
-                                        <div id="singleMap" data-latitude="40.7427837"
-                                            data-longitude="-73.11445617675781" data-mapTitle="Our Location"></div>
+                                    <div class="map-container" id="singleMap">
                                     </div>
                                 </div>
                             </div>

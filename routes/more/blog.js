@@ -20,12 +20,20 @@ router.get('/blog', function(req, res, next) {
 
 router.get('/blog/:makale', function(req, res, next) {
     Blog.findOne({slug:req.params.makale}).then((blog)=>{
-        title = blog.baslik+' - Ararsın.com'
-        keywords = blog.etiketler
-        description = blog.description
-        canonical = env.DOMAIN_NAME +"/"+blog.slug
-        breadcrumb =[]
-        res.render('themplate/more/blog_makale', {blog,keywords,description,canonical,breadcrumb})
+        Blog.countDocuments({}).then((count)=>{
+            console.log(count)
+            Blog.findOne({}).then((random_blog1)=>{
+                Blog.findOne({}).then((random_blog2)=>{
+                    title = blog.baslik+' - Ararsın.com'
+                    keywords = blog.etiketler
+                    description = blog.description
+                    canonical = env.DOMAIN_NAME +"/"+blog.slug
+                    breadcrumb =[]
+                    res.render('themplate/more/blog_makale', {blog,keywords,description,canonical,breadcrumb,random_blog1,random_blog2})
+                })
+            })
+        })
+        
     })
 });
 

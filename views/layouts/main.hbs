@@ -7,18 +7,13 @@
         <title>{{title}}</title>
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <!--<meta name="robots" content="index, follow" />-->
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
         <meta name="keywords" content="{{#each keywords}}{{this}}, {{/each}}ararsin, firma rehberi" />
         <meta name="description" content="{{description}}" />
         <Link rel="canonical" href="{{canonical}}" />
         
         <!--=============== css  ===============-->
-        <link type="text/css" rel="stylesheet" href="/tema/css/reset.css">
-        <link type="text/css" rel="stylesheet" href="/tema/css/plugins.css">
         <link type="text/css" rel="stylesheet" href="/tema/css/style.css">
-        <link type="text/css" rel="stylesheet" href="/tema/css/color.css">
-        <link type="text/css" rel="stylesheet" href="/tema/css/ekleme.css">
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="/tema/images/favico/{{logo}}.ico">
     </head>
@@ -36,7 +31,7 @@
             <!-- header -->
             <header class="main-header">
                 <!-- logo-->
-                <a href="/" class="logo-holder"><img src="/tema/images/logo/{{logo}}.png" alt=""></a>
+                <a href="/" class="logo-holder"><img src="/tema/images/logo/{{logo}}.png" alt="Ararsın.com logo"></a>
                 <!-- logo end-->
                 <!-- header-search_btn-->
                 <div class="header-search_btn show-search-button"><i class="fal fa-search"></i><span>Hızlı Arama</span></div>
@@ -71,7 +66,7 @@
                         <ul class="no-list-style">
 
                             <li>
-                                <a href="/" class="link">Anasayfa </a>
+                                <a href="/" class="link">Ads </a>
                             </li>
                             <li>
                                 <a href="/hakkimizda" class="link">Hakkımızda </a>
@@ -161,8 +156,7 @@
                             <!-- footer-widget-->
                             <div class="col-md-4">
                                 <div class="footer-widget fl-wrap">
-                                    <div class="footer-logo"><a href="index.html"><img src="/tema/images/logo/{{logo}}.png"
-                                                alt=""></a>
+                                    <div class="footer-logo"><a href="index.html"><img src="/tema/images/logo/{{logo}}.png" alt="Ararsın.com logo"></a>
                                     </div>
                                     <div class="footer-contacts-widget fl-wrap">
                                         <p>Firmaları ve müşterileri bir araya getiren en büyük platform. Ararsın com ile hemen iletişime geçip yeni müşteriler kazanabilirsiniz. Aradığınız her yer 7/24 çevrimiçi destek ile sadece ararsın da. Her daim yanınızdayız. </p>
@@ -170,7 +164,7 @@
                                             <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="mailto:bilgi@ararsin.com"
                                                     target="_blank">bilgi@ararsin.com</a></li>
                                             <li> <span><i class="fal fa-map-marker"></i> Adres :</span><a href="#"
-                                                    target="_blank">Muratreis mah. Selamet sok. Üsküdar/İSTANBUL</a></li>
+                                                    >Muratreis mah. Selamet sok. Üsküdar/İSTANBUL</a></li>
                                             <li><span><i class="fal fa-phone"></i> Phone :</span><a
                                                     href="tel:05357350700">0 ( 535 ) 735 07 00</a></li>
                                         </ul>
@@ -196,12 +190,11 @@
                                         <ul class="no-list-style">
                                             {{#each (footer_blog)}}
                                             <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="/tema/images/all/1.webp"
-                                                        class="respimg" alt=""></a>
+                                                <a href="#" class="widget-posts-img"><img src="{{resim}}"
+                                                        class="respimg" alt="{{adi}}"></a>
                                                 <div class="widget-posts-descr">
                                                     <a href="#" title="">{{adi}}</a>                                                    
-                                                    <span class="widget-posts-date"><i class="fal fa-calendar"></i> 21 Mar
-                                                        09.05 </span>
+                                                    <span class="widget-posts-date"><i class="fal fa-calendar"></i>{{tarih}}</span>
                                                 </div>
                                             </li>
                                             {{/each}}
@@ -354,17 +347,9 @@
         <!-- Main end -->
         <!--=============== scripts  ===============-->
         <script src="/tema/js/jquery.min.js"></script>
-        <script src="/tema/js/plugins.js"></script>
-        <script src="/tema/js/scripts.js"></script>
-        <!--
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places&callback=initAutocomplete"></script>
-            <script src="js/map-single.js"></script>  
-            -->
-        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
-        <script src="/tema/js/searchbox.js"></script>
-        <script src="/tema/js/sayfalama.js"></script>
+       
 
-        {{#if harita}}
+         {{#if harita}}
         <script src="/tema/js/openlayer.js"></script>
         <script>
             $(function () {

@@ -7,7 +7,7 @@ router.get('/hakkimizda', function(req, res, next) {
     title = "Hakkımızda - Ararsın.com"
     keywords = ["hakkımızda"]
     description = ["Sitemiz ve bizim hakkımızda öğrenmek istediğiniz herşey"]
-    canonical = env.DOMAIN_NAME+"hakkimizda"
+    canonical = env.DOMAIN_NAME+"/hakkimizda"
     breadcrumb = []
     res.render('themplate/more/hakkimizda', {title,keywords,description,canonical,breadcrumb})
 });

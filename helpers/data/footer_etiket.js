@@ -1,9 +1,33 @@
 footer_etiket = [{
-    "etiket": "dememe",
-    "link": "hak"
+    "etiket": "firma rehberi",
+    "link": "#"
 }, {
-    "etiket": "dememe",
-    "link": "hak"
+    "etiket": "ararsın",
+    "link": "#"
+},{
+    "etiket": "nerede",
+    "link": "#"
+}, {
+    "etiket": "firmalar nerede",
+    "link": "#"
+},{
+    "etiket": "firma reklamı",
+    "link": "#"
+}, {
+    "etiket": "rehber",
+    "link": "#"
+}, {
+    "etiket": "firma",
+    "link": "#"
+}, {
+    "etiket": "şirket",
+    "link": "#"
+}, {
+    "etiket": "şirket seo",
+    "link": "#"
+}, {
+    "etiket": "kurumsal firma",
+    "link": "#"
 }]
 
 module.exports = {

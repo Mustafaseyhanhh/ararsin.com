@@ -669,7 +669,7 @@ function initTowhub() {
     }
     function hideSearch() {
         headSearch.removeClass("vis-head-search").addClass("vis-search");
-        ssbut.find("span").text("Search");
+        ssbut.find("span").text("Hızlı Arama");
         ssbut.find("i").removeClass("vis-head-search-close");
         mainheader.removeClass("vis-searchdec");
     }
