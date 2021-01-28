@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var {Il,Ilce} = require('../../models/konum')
+var env =  require('../../env')
 
 /* GET users listing. */
 router.get('/sehirler', function(req, res, next) {

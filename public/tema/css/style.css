@@ -22893,8 +22893,11 @@ body .pac-container {
 .share-holder.hid-share .share-container  .share-icon:hover  {
 	color:#384F95;
 }
-.green-bg , div.datedropper.primary .pick-submit , .footer-bg-pin    , .gsd_open , .verified-badge    , .toggle-filter-btn.tsb_act  , .status.st_online span  , .slide-progress  , .reply-item , #progressbar li.active:last-child  span , .user-profile-menu li a span  , .infobox-status.open , .map-popup-location-category.shop-cat  , .process-item_time-line:after     {
+.green-bg, div.datedropper.primary .pick-submit , .footer-bg-pin    , .gsd_open , .verified-badge    , .toggle-filter-btn.tsb_act  , .status.st_online span  , .slide-progress  , .reply-item , #progressbar li.active:last-child  span , .user-profile-menu li a span  , .infobox-status.open , .map-popup-location-category.shop-cat  , .process-item_time-line:after     {
 	background: rgb(255,201,7);
+}
+.green-bg-sale {
+	background: #5ecfb1;
 }
 .show-reg-form:hover, .show-lang:hover, .clear-wishlist:hover , .lang-tooltip li a:before , .opening-hours ul li.todaysDay span.opening-hours-time , .pricerange , .tags-stylwrap .tags-title i  , .faq-nav li a  i  , .tfp-det p a , .tfp-btn:before  , .green-bg_color  , .testi-link:hover {
 	color: rgb(255,201,7);
