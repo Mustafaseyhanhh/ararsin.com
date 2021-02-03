@@ -4,13 +4,20 @@
     <head>
         <!--=============== basic  ===============-->
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" pageEncoding="ISO-8859-1">
-        <title>{{title}}</title>
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="robots" content="index, follow" />
+        {{#if title}}
+        <title>{{title}}</title>
         <meta name="keywords" content="{{#each keywords}}{{this}}, {{/each}}ararsin, firma rehberi" />
         <meta name="description" content="{{description}}" />
         <Link rel="canonical" href="{{canonical}}" />
+        {{else}}
+        <title>Sayfa Bulunamadı - Ararsın.com</title>
+        <meta name="keywords" content="ararsin, firma rehberi" />
+        <meta name="description" content="Üzgünüz aradığınız sayfa bulunamadı yada kaldırılmış. Lütren arama bölümünü kullanınız." />
+        <Link rel="canonical" href="http://ararsin.com:3000/404" />
+        {{/if}}
         
         <!--=============== css  ===============-->
         <link type="text/css" rel="stylesheet" href="/tema/css/style.css">
@@ -212,7 +219,7 @@
                                     <div class="box-widget-content">
                                     <div class="list-single-tags tags-stylwrap">
                                         {{#each (footer_etiket)}}
-                                        <a href="{{link}}">{{etiket}}</a>
+                                        <bold><a href="{{link}}">{{etiket}}</a></bold>
                                         {{/each}}
                                     </div>
                                 </div>

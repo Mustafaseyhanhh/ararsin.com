@@ -1,5 +1,6 @@
 var {Subs} = require('../../models/subs');
 var Sayfalama =  require('../../helpers/sayfalama')
+var express = require('express');
 var Il = require("../../models/konum").Il;
 var env =  require('../../env')
 
@@ -8,7 +9,23 @@ function Sil (req, res, next) {
     var p = Sayfalama(req.query["p"])
     Il.findOne({slug:req.params.il_firma_kategori})
     .then((il)=>{
-        Subs.find({il:il._id}).skip(p.skip).limit(p.limit).then((subs)=>{
+        Subs.aggregate([{
+            $match: {
+                il:il._id
+            }
+        },{
+            $lookup: {
+                from: 'kategoris',
+                localField: 'kategori',
+                foreignField: '_id',
+                as: 'kategori'
+            }
+        },
+        { "$limit": p.limit+p.skip },
+        { "$skip": p.skip },
+        {
+            $unwind: '$kategori',
+        }],(error,subs)=>{
             title = il.adi+" firmaları - Ararsın.com"
             keywords = [il.adi+" firmaları"]
             description = il.adi+" firmaları - Ararsın.com"

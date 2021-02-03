@@ -12,7 +12,24 @@ function SilSkategori (req, res, next) {
     .then((il)=>{
         Kategori.findOne({slug:req.params.ilce_kategori_firma})
         .then((kategori)=>{
-            Subs.find({il:il._id,kategori:kategori._id}).skip(p.skip).limit(p.limit).then((subs)=>{
+            Subs.aggregate([{
+                $match: {
+                    il:il._id,
+                    kategori:kategori._id
+                }
+            },{
+                $lookup: {
+                    from: 'kategoris',
+                    localField: 'kategori',
+                    foreignField: '_id',
+                    as: 'kategori'
+                }
+            },
+            { "$limit": p.limit+p.skip },
+            { "$skip": p.skip },
+            {
+                $unwind: '$kategori',
+            }],(error,subs)=>{
                 title = il.adi+" "+kategori.adi+" firmaları - Ararsın.com"
                 keywords = [il.adi+" firmaları",kategori.adi+" firmaları",il.adi+" "+kategori.adi+" firmaları"]
                 description = il.adi+" "+kategori.adi+" firmaları - Ararsın.com"

@@ -36,7 +36,9 @@ function Firma (firma_slug, req, res, next) {
                         canonical = env.DOMAIN_NAME+"/"+subs.slug
                         breadcrumb = [il.adi,ilce.adi,kategori.adi]
                         res.render('themplate/subs/subsDefault', {subs,title,keywords,description,canonical,breadcrumb,il,ilce,kategori,subs,data,harita:true,tel,harita_linki})
-                    })
+                    }).catch((err)=>{
+        console.log(err)
+    })
                 })
             })
         })

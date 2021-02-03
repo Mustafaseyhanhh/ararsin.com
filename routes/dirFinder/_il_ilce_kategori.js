@@ -14,7 +14,25 @@ function SilSilceSkategori (req, res, next) {
         .then((ilce)=>{
             Kategori.findOne({slug:req.params.ilce_kategori_firma})
             .then((kategori)=>{
-                Subs.find({il:il._id,ilce:ilce._id,kategori:kategori._id}).skip(p.skip).limit(p.limit).then((subs)=>{
+                Subs.aggregate([{
+                    $match: {
+                        il:il._id,
+                        ilce:ilce._id,
+                        kategori:kategori._id
+                    }
+                },{
+                    $lookup: {
+                        from: 'kategoris',
+                        localField: 'kategori',
+                        foreignField: '_id',
+                        as: 'kategori'
+                    }
+                },
+                { "$limit": p.limit+p.skip },
+                { "$skip": p.skip },
+                {
+                    $unwind: '$kategori',
+                }],(error,subs)=>{
                     title = il.adi+" "+ilce.adi+" "+kategori.adi+" firmaları - Ararsın.com"
                     keywords = [il.adi+" firmaları",ilce.adi+" firmaları",kategori.adi+" firmaları",il.adi+" "+ilce.adi+" firmaları",il.adi+" "+kategori.adi+" firmaları",ilce.adi+" "+kategori.adi+" firmaları",kategori.adi+" firmaları"]
                     description = il.adi+" "+ilce.adi+" "+kategori.adi+" firmaları - Ararsın.com"

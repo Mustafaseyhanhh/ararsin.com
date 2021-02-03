@@ -3,6 +3,7 @@ const xml_to = require('xml')
 var express = require('express');
 const env = require('../../env')
 var router = express.Router();
+var DateFormat  = require("dateformat")
 
 // MODEL import
 var Blog = require('../../models/blog');
@@ -26,7 +27,7 @@ router.get('/blog.xml', function (req, res, next) {
                         }, {
                             priority: 1.0
                         }, {
-                            lastmod: Date(element.date)
+                            lastmod:  DateFormat(new Date(element.date), "yyyy-MM-ddTHH:mm:ss+00:00")
                         }]
                     })
                     //console.log(element.lastmod)

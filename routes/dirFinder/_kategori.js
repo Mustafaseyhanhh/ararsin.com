@@ -8,7 +8,23 @@ function Skategori (req, res, next) {
     var p = Sayfalama(req.query["p"])
     Kategori.findOne({slug:req.params.il_firma_kategori})
     .then((kategori)=>{
-        Subs.find({kategori:kategori._id}).skip(p.skip).limit(p.limit).then((subs)=>{
+        Subs.aggregate([{
+            $match: {
+                kategori:kategori._id
+            }
+        },{
+            $lookup: {
+                from: 'kategoris',
+                localField: 'kategori',
+                foreignField: '_id',
+                as: 'kategori'
+            }
+        },
+        { "$limit": p.limit+p.skip },
+        { "$skip": p.skip },
+        {
+            $unwind: '$kategori',
+        }],(error,subs)=>{
             title = kategori.adi+" firmaları - Ararsın.com"
             keywords = [kategori.adi+" firmaları"]
             description = kategori.adi+" firmaları - Ararsın.com"

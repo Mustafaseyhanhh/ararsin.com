@@ -10,7 +10,23 @@ function SilSilce (req, res, next) {
     .then((il)=>{
         Ilce.findOne({il:il._id,slug:req.params.ilce_kategori_firma})
         .then((ilce)=>{
-            Subs.find({ilce:ilce._id}).skip(p.skip).limit(p.limit).then((subs)=>{
+            Subs.aggregate([{
+                $match: {
+                    ilce:ilce._id
+                }
+            },{
+                $lookup: {
+                    from: 'kategoris',
+                    localField: 'kategori',
+                    foreignField: '_id',
+                    as: 'kategori'
+                }
+            },
+            { "$limit": p.limit+p.skip },
+            { "$skip": p.skip },
+            {
+                $unwind: '$kategori',
+            }],(error,subs)=>{
                 title = il.adi+" "+ilce.adi+" firmaları - Ararsın.com"
                 keywords = [il.adi+" firmaları",ilce.adi+" firmaları",il.adi+" "+ilce.adi+" firmaları"]
                 description = il.adi+" "+ilce.adi+" firmaları - Ararsın.com"

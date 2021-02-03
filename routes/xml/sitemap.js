@@ -3,6 +3,7 @@ const xml_to = require('xml')
 var express = require('express');
 const env = require('../../env')
 var router = express.Router();
+var DateFormat  = require("dateformat")
 
 // MODEL import
 var Sitemapurl = require('../../models/sitemap');
@@ -62,7 +63,7 @@ router.get('/sitemap:digit', function (req, res, next) {
                                             }, {
                                                 priority: element.priority
                                             }, {
-                                                lastmod: Date(element.lastmod)
+                                                lastmod: DateFormat(new Date(element.lastmod), "yyyy-MM-ddTHH:mm:ss+00:00")
                                             }]
                                         })
                                         //console.log(element.lastmod)
