@@ -27,7 +27,7 @@ router.get('/blog.xml', function (req, res, next) {
                         }, {
                             priority: 1.0
                         }, {
-                            lastmod:  DateFormat(new Date(element.date), "yyyy-MM-ddTHH:mm:ss+00:00")
+                            lastmod:  DateFormat(new Date(element.date), "isoDateTime")
                         }]
                     })
                     //console.log(element.lastmod)

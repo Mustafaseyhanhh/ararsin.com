@@ -63,7 +63,7 @@ router.get('/sitemap:digit', function (req, res, next) {
                                             }, {
                                                 priority: element.priority
                                             }, {
-                                                lastmod: DateFormat(new Date(element.lastmod), "yyyy-MM-ddTHH:mm:ss+00:00")
+                                                lastmod: DateFormat(new Date(element.lastmod), "isoDateTime")
                                             }]
                                         })
                                         //console.log(element.lastmod)
