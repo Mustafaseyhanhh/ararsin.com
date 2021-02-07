@@ -1921,7 +1921,7 @@ section.gray-section .section-separator {
 	position:relative;
 	min-height: 100vh;
 	background:#fff;
-	padding-top:120px;
+	padding-top:40px;
 }
 .login-column .main-register-holder  {
 	margin-top:0;
@@ -1941,17 +1941,17 @@ section.gray-section .section-separator {
 }
 .login-column_header{
 	max-width:500px;
-	margin:0 auto 50px;
+	margin:0 auto 15px;
 }
 .login-column_header img {
  
-	height:30px;
+	height:45px;
 	width:auto;
 	margin:0 auto;
 }
 .login-column_header h4{
 	font-size:24px;
-	color:#3b5998;
+	color:#8d8d92;
 	margin-top:20px;
 }
 .login-promo-container {

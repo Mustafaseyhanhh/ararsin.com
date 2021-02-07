@@ -13,28 +13,6 @@ const env = require('./env');
 //Helpers
 const {logo, karakter, each_limit, date_format, iff, footer_blog, footer_etiket,home_referans} = require('./helpers/default')
 
-//Api Routes
-var subsEkleme = require('./routes/api/subsEkleme');
-//Main Routes
-var anasayfaRouter = require('./routes/anasayfa');
-var aramaRouter = require('./routes/arama');
-var subsRouter = require('./routes/subs');
-var urlFinderRouter = require('./routes/urlFinder');
-var sehirlerRouter = require('./routes/more/sehirler');
-var kategorilerRouter = require('./routes/more/kategoriler')
-var hakkimizdaRouter = require('./routes/more/hakkimizda');
-var iletisimRouter = require('./routes/more/iletisim');
-var sssRouter = require('./routes/more/sss');
-var blogRouter = require('./routes/more/blog');
-var paketlerRouter = require('./routes/more/paketler');
-var sitemapRouter = require('./routes/xml/sitemap');
-var blogSitemapRouter = require('./routes/xml/blog_sitemap');
-var imageSitemapRouter = require('./routes/xml/image_sitemap');
-var sozlesmelerRouter = require('./routes/more/sozlesmeler')
-var indexRouter = require('./routes/index')
-//Ajax Routes
-var serachboxRouter = require('./routes/searchBox');
-
 var app = express();
 
 // view engine setup
@@ -69,26 +47,55 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //Api Routes
+var subsEkleme = require('./routes/api/subsEkleme');
 app.use('/', subsEkleme);
+
 //Main Routes
+var anasayfaRouter = require('./routes/anasayfa');
 app.use('/', anasayfaRouter);
+var aramaRouter = require('./routes/arama');
 app.use('/', aramaRouter);
+var sehirlerRouter = require('./routes/more/sehirler');
 app.use('/', sehirlerRouter);
+var kategorilerRouter = require('./routes/more/kategoriler')
 app.use('/', kategorilerRouter);
+var subsRouter = require('./routes/subs');
 app.use('/', subsRouter);
+var hakkimizdaRouter = require('./routes/more/hakkimizda');
 app.use('/', hakkimizdaRouter);
+var iletisimRouter = require('./routes/more/iletisim');
 app.use('/', iletisimRouter);
+var sssRouter = require('./routes/more/sss');
 app.use('/', sssRouter);
+var blogRouter = require('./routes/more/blog');
 app.use('/', blogRouter);
+var paketlerRouter = require('./routes/more/paketler');
 app.use('/', paketlerRouter);
+var sozlesmelerRouter = require('./routes/more/sozlesmeler')
 app.use('/', sozlesmelerRouter);
-app.use('/', indexRouter);
+var paytrRouter = require('./routes/paytr');
+app.use('/', paytrRouter);
+
+//Yonetim Routes
+var paytrRouter = require('./routes/paytr');
+app.use('/', paytrRouter);
+
+//Test Routes
+var sahiplenRouter = require('./routes/dashboard/sahiplen')
+app.use('/', sahiplenRouter);
+
 //Ajax Routes
+var serachboxRouter = require('./routes/searchBox');
 app.use('/', serachboxRouter);
+
 //Genel Routes
+var sitemapRouter = require('./routes/xml/sitemap');
 app.use('/', sitemapRouter);
+var blogSitemapRouter = require('./routes/xml/blog_sitemap');
 app.use('/', blogSitemapRouter);
+var imageSitemapRouter = require('./routes/xml/image_sitemap');
 app.use('/', imageSitemapRouter);
+var urlFinderRouter = require('./routes/urlFinder');
 app.use('/', urlFinderRouter);
 
 mongoose.connect('mongodb://localhost:27017/'+env.DB_NAME, {

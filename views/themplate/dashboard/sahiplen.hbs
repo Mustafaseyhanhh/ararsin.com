@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>Firma Sahiplenme - Ararsın.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content="firma sahiplen, ararsin, firma rehberi"/>
+        <meta name="description" content="Sahibi olduğunuz firmaları bu sayfa aracılığı ile bizlere bildirerek profillerinizi yönetebilirsiniz."/>
+        <!--=============== css  ===============-->	
+        <link type="text/css" rel="stylesheet" href="/tema/css/reset.css">
+        <link type="text/css" rel="stylesheet" href="/tema/css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="/tema/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/tema/css/color.css">
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="/tema/images/favico/{{logo}}.ico">
+    </head>
+    <body>
+        <!--loader-->
+        <div class="loader-wrap">
+            <div class="loader-inner">
+                <div class="loader-inner-cirle"></div>
+            </div>
+        </div>
+        <!--loader end-->
+        <!-- main start  -->
+        <div id="main">
+            <!--login-column  -->
+            <div class="login-column">
+                <div class="login-column_header">
+                    <img src="/tema/images/logo/l{{logo}}.png" alt="Ararsın.com logo">
+                    <div class="clearfix"></div>
+                    {{#if hata}}
+                    <h4 style="color: #ffdf07;">{{hata}}</h4>
+                    {{else}}
+                    <h4>Türkiyenin en büyük firma rehberine hoşgeldiniz.</h4>
+                    {{/if}}
+                </div>
+                <div class="main-register-holder tabs-act">
+                    <div class="main-register fl-wrap">
+                        
+                        <!--tabs -->                       
+                        <div class="tabs-container">
+                            <div class="tab">
+                                <!--tab -->
+                                <div id="tab-1" class="tab-content first-tab">
+                                    <div class="custom-form">
+                                        
+                                            <form method="post" action="/sahiplen" class="main-register-form" id="main-register-form2">
+                                                <label >Firmanız <span>*</span> </label>
+                                                <input name="firma_adi" type="text" value="{{subs.baslik}}" disabled>
+                                                <input class="hide" name="firma" type="text" value="{{subs._id}}">
+                                                <label >Adınız <span>*</span> </label>
+                                                <input name="name" type="text"   onClick="this.select()" placeholder="Tam Adınız" required>
+                                                <label>Email <span>*</span></label>
+                                                <input name="email" type="text"  onClick="this.select()" placeholder="Firma uzantılı olursa doğrulama daha hızlı olmaktadır" required>
+                                                <label>Gsm <span>*</span></label>
+                                                <input name="gsm" type="text"  onClick="this.select()" placeholder="Doğrulama için gereklidir" required>
+                                                
+                                                <div class="filter-tags ft-list">
+                                                    <input id="check-a2" type="checkbox" name="gcheck" required>
+                                                    <label for="check-a2">Kabul ediyorum <a href="/gizlilik-sozlesmesi">Gizlilik Sözleşmesi</a></label>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="filter-tags ft-list">
+                                                    <input id="check-a" type="checkbox" name="hcheck" required>
+                                                    <label for="check-a">Kabul ediyorum <a href="#">/hizmet-sozlesmesi</a></label>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <button type="submit"class="btn float-btn color2-bg" style="width: 100%;">Talebi Gönder <i class="fas fa-caret-right"></i></button>
+                                            </form>
+                                        </div>
+                                </div>
+                                <!--tab end -->
+                            </div>
+                            <!--tabs end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--login-column end-->
+            <!--login-column-bg  -->
+            <div class="login-column-bg gradient-bg">
+                <!--ms-container-->
+                <div class="slideshow-container" data-scrollax="properties: { translateY: '300px' }" >
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                             <!--ms_item-->
+                            <div class="swiper-slide ">
+                                <div class="ms-item_fs fl-wrap full-height">
+                                    <div class="bg" data-bg="/images/slider/ararsin_restoran_ara.webp"></div>
+                                    <div class="overlay op7"></div>
+                                </div>
+                            </div>
+                            <!--ms_item end-->
+                            <!--ms_item-->
+                            <div class="swiper-slide">
+                                <div class="ms-item_fs fl-wrap full-height">
+                                    <div class="bg" data-bg="/images/slider/ararsin_hersey_ara.webp"></div>
+                                    <div class="overlay op7"></div>
+                                </div>
+                            </div>
+                            <!--ms_item end-->
+                           
+                            <!--ms_item-->
+                            <div class="swiper-slide">
+                                <div class="ms-item_fs fl-wrap full-height">
+                                    <div class="bg" data-bg="/images/slider/ararsin_otel_ara.webp"></div>
+                                    <div class="overlay op7"></div>
+                                </div>
+                            </div>
+                            <!--ms_item end-->
+                            <!--ms_item-->
+                            <div class="swiper-slide">
+                                <div class="ms-item_fs fl-wrap full-height">
+                                    <div class="bg" data-bg="/images/slider/ararsin_eglence_ara.webp"></div>
+                                    <div class="overlay op7"></div>
+                                </div>
+                            </div>
+                            <!--ms_item end-->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--login-column-bg end-->
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        <script src="/tema/js/jquery.min.js"></script>
+        <script src="/tema/js/plugins.js"></script>
+        <script src="/tema/js/scripts.js"></script>
+    </body>
+</html>
