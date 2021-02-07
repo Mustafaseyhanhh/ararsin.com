@@ -84,7 +84,7 @@ router.get('/get_token', function(req, res, next) {
             });
         }).then((token)=>{
             console.log(token)
-            res.send(token)
+            res.render('themplate/odeme', { layout: false,key:token})
         }).catch((reason)=>{
             console.log(reason)
             res.send(reason)
@@ -98,6 +98,10 @@ router.get('/get_token', function(req, res, next) {
 router.post('/callback', function(req, res, next) {
     console.log("geri bildirim geldi........................................")
     console.log(req.body)
+    res.send("OK");
+});
+
+router.post('/odeme', function(req, res, next) {
     res.send("OK");
 });
 
