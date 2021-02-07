@@ -1,7 +1,7 @@
 var express = require('express');
-const { token } = require('morgan');
 var router = express.Router();
 var Odeme = require('../models/odeme')
+var mongoose = require('mongoose')
 var PayTR=require('node-paytr')
 
 merchant_params ={
@@ -48,7 +48,7 @@ router.post('/callback', function(req, res, next) {
     paytr.getPost(req.body, ({merchant_oid, status}) => {
         console.log(req.body)
         if ( status === "success"){
-            Odeme.findByIdAndUpdate({merchant_oid},{onay:true},(err,odeme)=>{
+            Odeme.findByIdAndUpdate({_id:mongoose.ObjectId(merchant_oid)},{onay:true},(err,odeme)=>{
                 if(err){
                     console.log(err)
                 }else{
