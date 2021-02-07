@@ -19,12 +19,12 @@ const paytr = new PayTR(merchant_params);
 
 /* GET home page. */
 router.get('/get_token', function(req, res, next) {
-    const user_params={
+    var user_params={
         user_ip:"85.96.216.35",
         user_name:"Paytr Test",
         user_address:"test test test",
         user_phone:"055555555",
-        user_basket:[["Altis Renkli Deniz Yatağı - Mavi", "18.00", 1],["Pharmasol Güneş Kremi 50+ Yetişkin & Bepanthol Cilt Bakım Kremi", "33,25", 2]],
+        user_basket:[["Altis Renkli Deniz Yatağı - Mavi", "100.00", 1],["Pharmasol Güneş Kremi 50+ Yetişkin & Bepanthol Cilt Bakım Kremi", "0.99", 1]],
         email:"mustafaseyhanhh@gmail.com",
         payment_amount:10099,
         currency:"TL",
@@ -32,9 +32,11 @@ router.get('/get_token', function(req, res, next) {
         merchant_fail_url:"https://ararsin.com/odeme/hata"  
     }
     Odeme.create({user_ip:user_params.user_ip,user_name:user_params.user_name,user_address:user_params.user_address, user_phone:user_params.user_phone,user_basket:user_params.user_basket,email:user_params.email,payment_amount:user_params.payment_amount}).then((odeme)=>{
-        user_params["merchant_oid"]=odeme._id
+        user_params["merchant_oid"]=(odeme._id).toString()
         paytr.getToken(user_params).then((token)=>{
             res.render('themplate/odeme', { layout: false,token:token.token})
+        }).catch((err)=>{
+            console.log("-----------------",err)
         })
     }).catch((err)=>{
         console.log(err)
