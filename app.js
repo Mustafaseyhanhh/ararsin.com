@@ -98,6 +98,7 @@ app.use('/', imageSitemapRouter);
 var urlFinderRouter = require('./routes/urlFinder');
 app.use('/', urlFinderRouter);
 
+mongoose.set('useFindAndModify', false)
 mongoose.connect('mongodb://localhost:27017/'+env.DB_NAME, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

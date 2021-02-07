@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var Odeme = require('../models/odeme')
-var mongoose = require('mongoose')
 var PayTR=require('node-paytr')
 
 merchant_params ={
